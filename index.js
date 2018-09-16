@@ -948,6 +948,359 @@ app.get('/matinaaplaya-',function(_req, _res){
 
 
 });
+app.get('/ecoland-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[11].DE;
+	  	const intc1 = body.RWS[0].RW[11].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[11].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[11].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[11].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[11].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[11].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var ecoplus = jfc1 + jfc2 + jfc3;
+
+	  	var ecolandplus = ecoplus/p;
+	  	
+	  	let analysis9 = "";
+	  	if(ecolandplus <= 4){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 3){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 2){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 3){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 2){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 1){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 0){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus <= 8){
+	  		analysis9 = "Sluggish flow of traffic";
+	  	}else if(ecolandplus <= 7){
+	  		analysis9 = "Sluggish flow of traffic"
+	  	}else if(ecolandplus <= 6){
+	  		analysis9 = "Sluggish flow of traffic"
+	  	}else if(ecolandplus <= 5){
+	  		analysis9 = "Sluggish flow of traffic"
+	  	}else if(ecolandplus <= 4){
+	  		analysis9 = "Sluggish flow of traffic"
+	  	}else if(ecolandplus <= 8){
+	  		analysis9 = "Slow flow of traffic"
+	  	}else if(ecolandplus <= 9){
+	  		analysis9 = "Slow flow of traffic"
+	  	}else if(ecolandplus <= 10){
+	  		analysis9 = "Slow flow of traffic"
+	  	}else{
+	  		analysis9 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis9: analysis9 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/tulipdr',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[12].DE;
+	  	const intc1 = body.RWS[0].RW[12].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[12].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[12].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[12].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[12].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[12].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var tulip = jfc1 + jfc2 + jfc3 ;
+
+	  	var tulipdrive = tulip/p;
+	  	
+	  	let analysis10 = "";
+	  	if(tulipdrive <= 4){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 3){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 2){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 3){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 2){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 1){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 0){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive <= 8){
+	  		analysis10 = "Sluggish flow of traffic";
+	  	}else if(tulipdrive <= 7){
+	  		analysis10 = "Sluggish flow of traffic"
+	  	}else if(tulipdrive <= 6){
+	  		analysis10 = "Sluggish flow of traffic"
+	  	}else if(tulipdrive <= 5){
+	  		analysis10 = "Sluggish flow of traffic"
+	  	}else if(tulipdrive <= 4){
+	  		analysis10 = "Sluggish flow of traffic"
+	  	}else if(tulipdrive <= 8){
+	  		analysis10 = "Slow flow of traffic"
+	  	}else if(tulipdrive <= 9){
+	  		analysis10 = "Slow flow of traffic"
+	  	}else if(tulipdrive <= 10){
+	  		analysis10 = "Slow flow of traffic"
+	  	}else{
+	  		analysis10 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis10: analysis10 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/tulipdr-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[13].DE;
+	  	const intc1 = body.RWS[0].RW[13].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[13].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[13].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[13].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[13].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[13].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var tulipp = jfc1 + jfc2 + jfc3 ;
+
+	  	var tulippdrive = tulipp/p;
+	  	
+	  	let analysis11 = "";
+	  	if(tulippdrive <= 4){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 3){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 2){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 3){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 2){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 1){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 0){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive <= 8){
+	  		analysis11 = "Sluggish flow of traffic";
+	  	}else if(tulippdrive <= 7){
+	  		analysis11 = "Sluggish flow of traffic"
+	  	}else if(tulippdrive <= 6){
+	  		analysis11 = "Sluggish flow of traffic"
+	  	}else if(tulippdrive <= 5){
+	  		analysis11 = "Sluggish flow of traffic"
+	  	}else if(tulippdrive <= 4){
+	  		analysis11 = "Sluggish flow of traffic"
+	  	}else if(tulippdrive <= 8){
+	  		analysis11 = "Slow flow of traffic"
+	  	}else if(tulippdrive <= 9){
+	  		analysis11 = "Slow flow of traffic"
+	  	}else if(tulippdrive <= 10){
+	  		analysis11 = "Slow flow of traffic"
+	  	}else{
+	  		analysis11 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis11: analysis11 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/sandawa',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[14].DE;
+	  	const intc1 = body.RWS[0].RW[14].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[14].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[14].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[14].FIS[0].FI[1].CF[0].JF;
+	  	
+
+	  	var p = 2
+	  
+	  	var sandawaa = jfc1 + jfc2 ;
+
+	  	var sandawaas = sandawaa/p;
+	  	
+	  	let analysis12 = "";
+	  	if( <= 4){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 3){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 2){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 3){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 2){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 1){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 0){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 8){
+	  		analysis12 = "Sluggish flow of traffic";
+	  	}else if(sandawaas <= 7){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 6){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 5){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 4){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 8){
+	  		analysis12 = "Slow flow of traffic"
+	  	}else if(sandawaas <= 9){
+	  		analysis12 = "Slow flow of traffic"
+	  	}else if(sandawaas <= 10){
+	  		analysis12 = "Slow flow of traffic"
+	  	}else{
+	  		analysis12 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis12: analysis12 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/quimpoblvd',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[14].DE;
+	  	const intc1 = body.RWS[0].RW[14].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[14].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[14].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[14].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[14].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[14].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[14].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[14].FIS[0].FI[3].CF[0].JF;
+
+
+	  	var p = 4
+	  
+	  	var quimpo = jfc1 + jfc2 + jfc3 + jfc4 ;
+
+	  	var quimpoo = quimpo/p;
+	  	
+	  	let analysis13 = "";
+	  	if(quimpoo <= 4){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 3){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 2){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 3){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 2){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 1){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 0){
+	  		analysis13 = "Free flow of traffic";
+	  	}else if(quimpoo <= 8){
+	  		analysis13 = "Sluggish flow of traffic";
+	  	}else if(quimpoo <= 7){
+	  		analysis13 = "Sluggish flow of traffic"
+	  	}else if(quimpoo <= 6){
+	  		analysis13 = "Sluggish flow of traffic"
+	  	}else if(quimpoo <= 5){
+	  		analysis13 = "Sluggish flow of traffic"
+	  	}else if(quimpoo <= 4){
+	  		analysis13 = "Sluggish flow of traffic"
+	  	}else if(quimpoo <= 8){
+	  		analysis13 = "Slow flow of traffic"
+	  	}else if(quimpoo <= 9){
+	  		analysis13 = "Slow flow of traffic"
+	  	}else if(quimpoo <= 10){
+	  		analysis13 = "Slow flow of traffic"
+	  	}else{
+	  		analysis13 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis13: analysis13 }));
+	
+
+
+
+	  
+	});
+
+
+});
 
 
 
@@ -1164,7 +1517,86 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
 
+	axios.get('https://glacial-bastion-40512.herokuapp.com/ecoland-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
 
 
 
