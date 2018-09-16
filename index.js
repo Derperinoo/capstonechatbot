@@ -2865,7 +2865,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis6;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2876,6 +2876,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
 			if(text.includes("tulip drive-")){
 				let chatbotResponse = "";
 				
