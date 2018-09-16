@@ -2884,7 +2884,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis10;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2902,7 +2902,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis11;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2920,7 +2920,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis12;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2938,7 +2938,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis13;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2955,7 +2955,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis14;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2973,7 +2973,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis15;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2991,7 +2991,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis16;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3009,7 +3009,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis17;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3027,7 +3027,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/mlquezonblvd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis19;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3045,7 +3045,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/mlquezonblvd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis20;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3063,7 +3063,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis21;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3080,7 +3080,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/dacudaoave')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis22;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3098,7 +3098,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/dacudaoave-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis23;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3116,7 +3116,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/pichonst')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis24;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3134,7 +3134,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/pichonst-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis25;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
