@@ -874,6 +874,81 @@ app.get('/matinaaplaya',function(_req, _res){
 
 });
 
+app.get('/matinaaplaya-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetm = body.RWS[0].RW[10].DE;
+	  	const intm1 = body.RWS[0].RW[10].FIS[0].FI[0].TMC.DE;
+	  	const jfm1 = body.RWS[0].RW[10].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intm2 = body.RWS[0].RW[10].FIS[0].FI[1].TMC.DE;
+	  	const jfm2 = body.RWS[0].RW[10].FIS[0].FI[1].CF[0].JF;
+
+	  	const intm3 = body.RWS[0].RW[10].FIS[0].FI[2].TMC.DE;
+	  	const jfm3 = body.RWS[0].RW[10].FIS[0].FI[2].CF[0].JF;
+
+	  	const intm4 = body.RWS[0].RW[10].FIS[0].FI[3].TMC.DE;
+	  	const jfm4 = body.RWS[0].RW[10].FIS[0].FI[3].CF[0].JF;
+
+	  	
+
+	  	var p = 4
+	  
+	  	var matinaap = jfm1 + jfm2 + jfm3+ jfm4;
+
+	  	var mataplaya = matinaap/p;
+	  	
+	  	let analysis8 = "";
+	  	if(mataplaya <= 4){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 3){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 2){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 3){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 2){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 1){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 0){
+	  		analysis8 = "Free flow of traffic";
+	  	}else if(mataplaya <= 8){
+	  		analysis8 = "Sluggish flow of traffic";
+	  	}else if(mataplaya <= 7){
+	  		analysis8 = "Sluggish flow of traffic"
+	  	}else if(mataplaya <= 6){
+	  		analysis8 = "Sluggish flow of traffic"
+	  	}else if(mataplaya <= 5){
+	  		analysis8 = "Sluggish flow of traffic"
+	  	}else if(mataplaya <= 4){
+	  		analysis8 = "Sluggish flow of traffic"
+	  	}else if(mataplaya <= 8){
+	  		analysis8 = "Slow flow of traffic"
+	  	}else if(mataplaya <= 9){
+	  		analysis8 = "Slow flow of traffic"
+	  	}else if(mataplaya <= 10){
+	  		analysis8 = "Slow flow of traffic"
+	  	}else{
+	  		analysis8 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetm, intm1: intm1, jfm1: jfm1,  intm2: intm2, jfm2: jfm2, intm3: intm3, jfm3: jfm3, intm4:intm4, jfm4:jfm4, analysis8: analysis8 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
 
 
 
@@ -913,7 +988,7 @@ app.get('/geo',function(req, res){
 	axios.get('https://glacial-bastion-40512.herokuapp.com/equirino')
 	  .then(function (response) {
 	    console.log(response.data);
-	    //chatbotResponse = response.jf1;
+	    //chatbotResponse = response.jf1;	
 	    //sendText(sender, chatbotResponse)
 	  })
 	  .catch(function (error) {
@@ -1061,6 +1136,22 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
