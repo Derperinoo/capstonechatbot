@@ -1161,73 +1161,73 @@ app.get('/tulipdr-',function(_req, _res){
 
 
 });
-// app.get('/sandawa',function(_req, _res){
+app.get('/sandawa',function(_req, _res){
 
-// 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
-// 	  if (err) { return console.log(err); }
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
 
-// 	  	const streetc = body.RWS[0].RW[14].DE;
-// 	  	const intc1 = body.RWS[0].RW[14].FIS[0].FI[0].TMC.DE;
-// 	  	const jfc1 = body.RWS[0].RW[14].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[14].DE;
+	  	const intc1 = body.RWS[0].RW[14].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[14].FIS[0].FI[0].CF[0].JF;
 	  	
-// 	  	const intc2 = body.RWS[0].RW[14].FIS[0].FI[1].TMC.DE;
-// 	  	const jfc2 = body.RWS[0].RW[14].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[14].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[14].FIS[0].FI[1].CF[0].JF;
 	  	
 
-// 	  	var p = 2
+	  	var p = 2
 	  
-// 	  	var sandawaa = jfc1 + jfc2 ;
+	  	var sandawaa = jfc1 + jfc2 ;
 
-// 	  	var sandawaas = sandawaa/p;
+	  	var sandawaas = sandawaa/p;
 	  	
-// 	  	let analysis12 = "";
-// 	  	if( <= 4){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 3){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 2){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 3){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 2){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 1){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 0){
-// 	  		analysis12 = "Free flow of traffic";
-// 	  	}else if(sandawaas <= 8){
-// 	  		analysis12 = "Sluggish flow of traffic";
-// 	  	}else if(sandawaas <= 7){
-// 	  		analysis12 = "Sluggish flow of traffic"
-// 	  	}else if(sandawaas <= 6){
-// 	  		analysis12 = "Sluggish flow of traffic"
-// 	  	}else if(sandawaas <= 5){
-// 	  		analysis12 = "Sluggish flow of traffic"
-// 	  	}else if(sandawaas <= 4){
-// 	  		analysis12 = "Sluggish flow of traffic"
-// 	  	}else if(sandawaas <= 8){
-// 	  		analysis12 = "Slow flow of traffic"
-// 	  	}else if(sandawaas <= 9){
-// 	  		analysis12 = "Slow flow of traffic"
-// 	  	}else if(sandawaas <= 10){
-// 	  		analysis12 = "Slow flow of traffic"
-// 	  	}else{
-// 	  		analysis12 = "traffi8c kaayo di makaya"
-// 	  	}
+	  	let analysis12 = "";
+	  	if( <= 4){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 3){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 2){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 3){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 2){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 1){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 0){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas <= 8){
+	  		analysis12 = "Sluggish flow of traffic";
+	  	}else if(sandawaas <= 7){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 6){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 5){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 4){
+	  		analysis12 = "Sluggish flow of traffic"
+	  	}else if(sandawaas <= 8){
+	  		analysis12 = "Slow flow of traffic"
+	  	}else if(sandawaas <= 9){
+	  		analysis12 = "Slow flow of traffic"
+	  	}else if(sandawaas <= 10){
+	  		analysis12 = "Slow flow of traffic"
+	  	}else{
+	  		analysis12 = "traffi8c kaayo di makaya"
+	  	}
 
 
 
-// 	  	_res.setHeader('Content-Type', 'application/json');
-//     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis12: analysis12 }));
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis12: analysis12 }));
 	
 
 
 
 	  
-// 	});
+	});
 
 
-// });
+});
 // app.get('/quimpoblvd',function(_req, _res){
 
 // 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
@@ -1565,22 +1565,22 @@ app.get('/geo',function(req, res){
 	  });
 
 })
-// app.get('/geo',function(req, res){
+app.get('/geo',function(req, res){
 	
 
-// 	axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
-// 	  .then(function (response) {
-// 	    console.log(response.data);
-// 	    //chatbotResponse = response.jf1;
-// 	    //sendText(sender, chatbotResponse)
-// 	  })
-// 	  .catch(function (error) {
-// 	    console.log(error);
-// 	    //chatbotResponse = "not ok";
-// 	    //sendText(sender, chatbotResponse)
-// 	  });
+	axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
 
-// })
+})
 // app.get('/geo',function(req, res){
 	
 
