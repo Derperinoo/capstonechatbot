@@ -1750,6 +1750,22 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
 
 
 
