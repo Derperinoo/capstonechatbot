@@ -1301,8 +1301,145 @@ app.get('/quimpoblvd',function(_req, _res){
 
 
 });
+app.get('/sandawa-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[16].DE;
+	  	const intc1 = body.RWS[0].RW[16].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[16].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[16].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[16].FIS[0].FI[1].CF[0].JF;
+	  	
+
+	  	var p = 2
+	  
+	  	var sandawaaa = jfc1 + jfc2;
+
+	  	var sandawaaas = sandawaaa/p;
+	  	
+	  	let analysis14 = "";
+	  	if(sandawaaas <= 4){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 3){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 2){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 3){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 2){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 1){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 0){
+	  		analysis14 = "Free flow of traffic";
+	  	}else if(sandawaaas <= 8){
+	  		analysis14 = "Sluggish flow of traffic";
+	  	}else if(sandawaaas <= 7){
+	  		analysis14 = "Sluggish flow of traffic"
+	  	}else if(sandawaaas <= 6){
+	  		analysis14 = "Sluggish flow of traffic"
+	  	}else if(sandawaaas <= 5){
+	  		analysis14 = "Sluggish flow of traffic"
+	  	}else if(sandawaaas <= 4){
+	  		analysis14 = "Sluggish flow of traffic"
+	  	}else if(sandawaaas <= 8){
+	  		analysis14 = "Slow flow of traffic"
+	  	}else if(sandawaaas <= 9){
+	  		analysis14 = "Slow flow of traffic"
+	  	}else if(sandawaaas <= 10){
+	  		analysis14 = "Slow flow of traffic"
+	  	}else{
+	  		analysis14 = "traffi8c kaayo di makaya"
+	  	}
 
 
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis14: analysis14 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/quimpoblvd-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[17].DE;
+	  	const intc1 = body.RWS[0].RW[17].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[17].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[17].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[17].FIS[0].FI[1].CF[0].JF;
+
+	    const intc3 = body.RWS[0].RW[17].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[17].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[17].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[17].FIS[0].FI[3].CF[0].JF;
+
+
+	  	var p = 4
+	  
+	  	var quimpoo = jfc1 + jfc2 + jfc3 + jfc4 ;
+
+	  	var quimpooo = quimpoo/p;
+	  	
+	  	let analysis15 = "";
+	  	if(quimpooo <= 4){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 3){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 2){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 3){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 2){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 1){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 0){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo <= 8){
+	  		analysis15 = "Sluggish flow of traffic";
+	  	}else if(quimpooo <= 7){
+	  		analysis15 = "Sluggish flow of traffic"
+	  	}else if(quimpooo <= 6){
+	  		analysis15 = "Sluggish flow of traffic"
+	  	}else if(quimpooo <= 5){
+	  		analysis15 = "Sluggish flow of traffic"
+	  	}else if(quimpooo <= 4){
+	  		analysis15 = "Sluggish flow of traffic"
+	  	}else if(quimpooo <= 8){
+	  		analysis15 = "Slow flow of traffic"
+	  	}else if(quimpooo <= 9){
+	  		analysis15 = "Slow flow of traffic"
+	  	}else if(quimpooo <= 10){
+	  		analysis15 = "Slow flow of traffic"
+	  	}else{
+	  		analysis15 = "traffi8c kaayo di makaya"
+	  	}
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis15: analysis15 }));
+	
+
+
+
+	  
+	});
+
+
+});
 
 
 
@@ -1597,7 +1734,22 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
 
+	axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
 
 
 
