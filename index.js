@@ -2862,7 +2862,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/tulip dr')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis;
