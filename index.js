@@ -2858,11 +2858,11 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("tulip drive")){
+			if(text.includes("tulip dr")){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/tulip dr')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis;
