@@ -1181,7 +1181,7 @@ app.get('/sandawa',function(_req, _res){
 	  	var sandawaas = sandawaa/p;
 	  	
 	  	let analysis12 = "";
-	  	if(sandawaas<= 4){
+	  	if(sandawaas <= 4){
 	  		analysis12 = "Free flow of traffic";
 	  	}else if(sandawaas <= 3){
 	  		analysis12 = "Free flow of traffic";
