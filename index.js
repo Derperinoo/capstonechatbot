@@ -1516,7 +1516,7 @@ app.get('/geo',function(req, res){
 	    //sendText(sender, chatbotResponse)
 	  });
 
-// })
+})
 // app.get('/geo',function(req, res){
 	
 
