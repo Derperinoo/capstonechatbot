@@ -2102,7 +2102,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/equirino-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysiss;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
