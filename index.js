@@ -1924,7 +1924,7 @@ app.get('/jplaureloutgmall-',function(_req, _res){
 	  	const intc2 = body.RWS[0].RW[36].FIS[0].FI[1].TMC.DE;
 	  	const jfc2 = body.RWS[0].RW[35].FIS[0].FI[1].CF[0].JF;
 	
-	  	var p = 3
+	  	var p = 2
 	  
 	  	var jplau = jfc1 + jfc2 ;
 
@@ -1964,7 +1964,7 @@ app.get('/jplaureloutgmall',function(_req, _res){
 	  	const intc2 = body.RWS[0].RW[37].FIS[0].FI[1].TMC.DE;
 	  	const jfc2 = body.RWS[0].RW[37].FIS[0].FI[1].CF[0].JF;
 	
-	  	var p = 3
+	  	var p = 2
 	  
 	  	var jplaure = jfc1 + jfc2 ;
 
@@ -2117,7 +2117,7 @@ app.get('/cbangoy',function(_req, _res){
 
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, analysis37: analysis37 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, analysis38: analysis38 }));
 	  
 	});
 
