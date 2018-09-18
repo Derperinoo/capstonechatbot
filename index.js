@@ -1544,38 +1544,16 @@ app.get('/quezonblvd-',function(_req, _res){
 	  	var quezonnb = quezonn/p;
 	  	
 	  	let analysis17 = "";
-	  	if(quezonnb <= 4){
+	  	if(quezonnb == 0 && quezonnb < 4){
 	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 3){
-	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 2){
-	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 3){
-	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 2){
-	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 1){
-	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 0){
-	  		analysis17 = "Free flow of traffic";
-	  	}else if(quezonnb <= 8){
+	  	}else if(quezonnb == 4 && quezonnb < 8){
 	  		analysis17 = "Sluggish flow of traffic";
-	  	}else if(quezonnb <= 7){
-	  		analysis17 = "Sluggish flow of traffic"
-	  	}else if(quezonnb <= 6){
-	  		analysis17 = "Sluggish flow of traffic"
-	  	}else if(quezonnb <= 5){
-	  		analysis17 = "Sluggish flow of traffic"
-	  	}else if(quezonnb <= 4){
-	  		analysis17 = "Sluggish flow of traffic"
-	  	}else if(quezonnb <= 8){
-	  		analysis17 = "Slow flow of traffic"
-	  	}else if(quezonnb <= 9){
-	  		analysis17 = "Slow flow of traffic"
-	  	}else if(quezonnb <= 10){
-	  		analysis17 = "Slow flow of traffic"
+	  	}else if(quezonnb == 8 && quezonnb < 10){
+	  		analysis17 = "Slow flow of traffic";
+	  	}else if(quezonnb == 10){
+	  		analysis17 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis17 = "traffi8c kaayo di makaya"
+	  		analysis17 = "Cannot compute"
 	  	}
 
 
