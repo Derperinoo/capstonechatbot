@@ -1546,6 +1546,590 @@ app.get('/pichonst-',function(_req, _res){
 
 
 });
+app.get('/sanpedro',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[28].DE;
+	  	const intc1 = body.RWS[0].RW[28].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[28].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[28].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[28].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[28].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[28].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[28].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[28].FIS[0].FI[3].CF[0].JF;
+
+	
+	  	var p = 4
+	  
+	  	var sanped = jfc1 + jfc2 + jfc3 + jfc4 ;
+
+	  	var sanpedroo = sanped/p;
+	  	
+	  	let analysis26 = "";
+	  	
+	  	if(sanpedroo == 0 || sanpedroo < 4){
+	  		analysis26 = "Free flow of traffic";
+	  	}else if(sanpedroo == 4 || sanpedroo < 8){
+	  		analysis26 = "Sluggish flow of traffic";
+	  	}else if(sanpedroo == 8 || sanpedroo < 10){
+	  		analysis26 = "Slow flow of traffic";
+	  	}else if(sanpedroo == 10){
+	  		analysis26 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis26 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis26: analysis26 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/davaocity-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[29].DE;
+	  	const intc1 = body.RWS[0].RW[29].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[29].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[29].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[29].FIS[0].FI[1].CF[0].JF;
+
+	
+	  	var p = 2
+	  
+	  	var dav = jfc1 + jfc2 ;
+
+	  	var davaoo = dav/p;
+	  	
+	  	let analysis27 = "";
+	  	
+	  	if(davaoo == 0 || davaoo < 4){
+	  		analysis27 = "Free flow of traffic";
+	  	}else if(davaoo == 4 || davaoo < 8){
+	  		analysis27 = "Sluggish flow of traffic";
+	  	}else if(davaoo == 8 || davaoo < 10){
+	  		analysis27 = "Slow flow of traffic";
+	  	}else if(davaoo == 10){
+	  		analysis27 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis27 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis27: analysis27 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/ftorresst-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[30].DE;
+	  	const intc1 = body.RWS[0].RW[30].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[30].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[30].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[30].FIS[0].FI[1].CF[0].JF;
+
+	
+	  	var p = 2
+	  
+	  	var tor = jfc1 + jfc2 ;
+
+	  	var torress = tor/p;
+	  	
+	  	let analysis28 = "";
+	  	
+	  	if(torress == 0 || torress < 4){
+	  		analysis28 = "Free flow of traffic";
+	  	}else if(torress == 4 || torress < 8){
+	  		analysis28 = "Sluggish flow of traffic";
+	  	}else if(torress == 8 || torress < 10){
+	  		analysis28 = "Slow flow of traffic";
+	  	}else if(torress == 10){
+	  		analysis28 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis28 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis28: analysis28 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/abonifaciost-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[31].DE;
+	  	const intc1 = body.RWS[0].RW[31].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[31].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[31].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[31].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[31].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[31].FIS[0].FI[2].CF[0].JF;
+
+	
+	  	var p = 3
+	  
+	  	var boni = jfc1 + jfc2 + jfc3;
+
+	  	var bonifac = boni/p;
+	  	
+	  	let analysis29 = "";
+	  	
+	  	if(bonifac == 0 || bonifac < 4){
+	  		analysis29 = "Free flow of traffic";
+	  	}else if(bonifac == 4 || bonifac < 8){
+	  		analysis29 = "Sluggish flow of traffic";
+	  	}else if(bonifac == 8 || bonifac < 10){
+	  		analysis29 = "Slow flow of traffic";
+	  	}else if(bonifac == 10){
+	  		analysis29 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis29 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis29: analysis29 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/ftorresst',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[32].DE;
+	  	const intc1 = body.RWS[0].RW[32].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[32].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[32].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[32].FIS[0].FI[1].CF[0].JF;
+	
+	  	var p = 2
+	  
+	  	var torr = jfc1 + jfc2 ;
+
+	  	var torresss = torr/p;
+	  	
+	  	let analysis30 = "";
+	  	
+	  	if(torresss == 0 || torresss < 4){
+	  		analysis30 = "Free flow of traffic";
+	  	}else if(torresss == 4 || torresss < 8){
+	  		analysis30 = "Sluggish flow of traffic";
+	  	}else if(torresss == 8 || torresss < 10){
+	  		analysis30 = "Slow flow of traffic";
+	  	}else if(torresss == 10){
+	  		analysis30 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis30: analysis30 }));
+	  
+	});
+
+
+});
+app.get('/abonifaciost',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[33].DE;
+	  	const intc1 = body.RWS[0].RW[33].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[33].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[33].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[33].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[33].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[33].FIS[0].FI[2].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var bon = jfc1 + jfc2 + jfc3;
+
+	  	var bonifacioo = bon/p;
+	  	
+	  	let analysis31 = "";
+	  	
+	  	if(bonifacioo == 0 || bonifacioo < 4){
+	  		analysis31 = "Free flow of traffic";
+	  	}else if(bonifacioo == 4 || bonifacioo < 8){
+	  		analysis31 = "Sluggish flow of traffic";
+	  	}else if(bonifacioo == 8 || bonifacioo < 10){
+	  		analysis31 = "Slow flow of traffic";
+	  	}else if(bonifacioo == 10){
+	  		analysis31 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis31 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis31: analysis31 }));
+	  
+	});
+
+
+});
+app.get('/mroxas',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[34].DE;
+	  	const intc1 = body.RWS[0].RW[34].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[34].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[34].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[34].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[34].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[34].FIS[0].FI[2].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var rox = jfc1 + jfc2 + jfc3;
+
+	  	var roxa = rox/p;
+	  	
+	  	let analysis32 = "";
+	  	
+	  	if(roxa == 0 || roxa < 4){
+	  		analysis32 = "Free flow of traffic";
+	  	}else if(roxa == 4 || roxa < 8){
+	  		analysis32 = "Sluggish flow of traffic";
+	  	}else if(roxa == 8 || roxa < 10){
+	  		analysis32 = "Slow flow of traffic";
+	  	}else if(roxa == 10){
+	  		analysis32 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis32 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis32: analysis32 }));
+	  
+	});
+
+
+});
+app.get('/mroxas-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[35].DE;
+	  	const intc1 = body.RWS[0].RW[35].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[35].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[35].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[35].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[35].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[35].FIS[0].FI[2].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var roxx = jfc1 + jfc2 + jfc3;
+
+	  	var roxxas = roxx/p;
+	  	
+	  	let analysis33 = "";
+	  	
+	  	if(roxxas == 0 || roxxas < 4){
+	  		analysis33 = "Free flow of traffic";
+	  	}else if(roxxas == 4 || roxxas < 8){
+	  		analysis33 = "Sluggish flow of traffic";
+	  	}else if(roxxas == 8 || roxxas < 10){
+	  		analysis33 = "Slow flow of traffic";
+	  	}else if(roxxas == 10){
+	  		analysis33 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis33 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis33: analysis33 }));
+	  
+	});
+
+
+});
+app.get('/jplaureloutgmall-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[36].DE;
+	  	const intc1 = body.RWS[0].RW[36].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[36].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[36].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[35].FIS[0].FI[1].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var jplau = jfc1 + jfc2 + jfc3;
+
+	  	var jplaur = jplau/p;
+	  	
+	  	let analysis34 = "";
+	  	
+	  	if(jplaur == 0 || jplaur < 4){
+	  		analysis34 = "Free flow of traffic";
+	  	}else if(jplaur == 4 || jplaur < 8){
+	  		analysis34 = "Sluggish flow of traffic";
+	  	}else if(jplaur == 8 || jplaur < 10){
+	  		analysis34 = "Slow flow of traffic";
+	  	}else if(jplaur == 10){
+	  		analysis34 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis34 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis34: analysis34 }));
+	  
+	});
+
+
+});
+app.get('/jplaureloutgmall',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[37].DE;
+	  	const intc1 = body.RWS[0].RW[37].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[37].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[37].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[37].FIS[0].FI[1].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var jplaure = jfc1 + jfc2 + jfc3;
+
+	  	var jplaurell = jplaure/p;
+	  	
+	  	let analysis35 = "";
+	  	
+	  	if(jplaurell == 0 || jplaurell < 4){
+	  		analysis35 = "Free flow of traffic";
+	  	}else if(jplaurell == 4 || jplaurell < 8){
+	  		analysis35 = "Sluggish flow of traffic";
+	  	}else if(jplaurell == 8 || jplaurell < 10){
+	  		analysis35 = "Slow flow of traffic";
+	  	}else if(jplaurell == 10){
+	  		analysis35 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis35 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis35: analysis35 }));
+	  
+	});
+
+
+});
+
+app.get('/cmrecto',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[38].DE;
+	  	const intc1 = body.RWS[0].RW[38].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[38].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[38].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[38].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[38].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[38].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[38].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[38].FIS[0].FI[3].CF[0].JF;
+
+	  	const intc5 = body.RWS[0].RW[38].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[38].FIS[0].FI[4].CF[0].JF;
+	
+	  	var p = 5
+	  
+	  	var cmrec = jfc1 + jfc2 + jfc3 + jfc4 + jfc5;
+
+	  	var cmrect = cmrec/p;
+	  	
+	  	let analysis36 = "";
+	  	
+	  	if(cmrect == 0 || cmrect < 4){
+	  		analysis36 = "Free flow of traffic";
+	  	}else if(cmrect == 4 || cmrect < 8){
+	  		analysis36 = "Sluggish flow of traffic";
+	  	}else if(cmrect == 8 || cmrect < 10){
+	  		analysis36 = "Slow flow of traffic";
+	  	}else if(cmrect == 10){
+	  		analysis36 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis36 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5, analysis36: analysis36 }));
+	  
+	});
+
+
+});
+app.get('/cbangoy-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[39].DE;
+	  	const intc1 = body.RWS[0].RW[39].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[39].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[39].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[39].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[39].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[39].FIS[0].FI[2].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var cban = jfc1 + jfc2 + jfc3 ;
+
+	  	var cbango = cban/p;
+	  	
+	  	let analysis37 = "";
+	  	
+	  	if(cbango == 0 || cbango < 4){
+	  		analysis37 = "Free flow of traffic";
+	  	}else if(cbango == 4 || cbango < 8){
+	  		analysis37 = "Sluggish flow of traffic";
+	  	}else if(cbango == 8 || cbango < 10){
+	  		analysis37 = "Slow flow of traffic";
+	  	}else if(cbango == 10){
+	  		analysis37 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis37 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis37: analysis37 }));
+	  
+	});
+
+
+});
+
+app.get('/cbangoy',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[40].DE;
+	  	const intc1 = body.RWS[0].RW[40].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[40].FIS[0].FI[0].CF[0].JF;
+
+	  	var p = 1
+	  
+	  	var cbann = jfc1  ;
+
+	  	var cbanngoy = cbann/p;
+	  	
+	  	let analysis38 = "";
+	  	
+	  	if(cbanngoy == 0 || cbanngoy < 4){
+	  		analysis38 = "Free flow of traffic";
+	  	}else if(cbanngoy == 4 || cbanngoy < 8){
+	  		analysis38 = "Sluggish flow of traffic";
+	  	}else if(cbanngoy == 8 || cbanngoy < 10){
+	  		analysis38 = "Slow flow of traffic";
+	  	}else if(cbanngoy == 10){
+	  		analysis38 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis38 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis37: analysis37 }));
+	  
+	});
+
+
+});
+
+
+
+
+
+//=============================================================================================================================================================
+
 
 
 
@@ -2033,9 +2617,223 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/sanpedro')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/davaocity-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/ftorresst-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/abonifaciost-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/ftorresst')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/abonifaciost')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/mroxas')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/mroxas-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/jplaureloutgmall-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/jplaureloutgmall')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/cmrecto')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/cbangoy-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/cbangoy')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
 
 
- 
+//=============================================================================================================================================================
+
+
+
+
 
 let token = "EAAbH2BTNKJcBAHB7iKZCmxDRyrtU6LNZAYuRUE8GaEuX3cVXC5yZAZAkoNsd8qZBxpOP6Et6ErDc9KryM1vfU6Lshle9drZCAKRqrojYwgCOrOTxRXcifdGP0gSyR07jCttdJAjWgJB5PK9bohCqJGyDmVJQklFZBs7hrlrKYg74AZDZD"
 
@@ -2193,7 +2991,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ecowestdr-')
+			if(text=='ecowest drive-')
 			// if(text.includes("ecowestdr"))
 			{
 				let chatbotResponse = "";
@@ -2213,7 +3011,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ecowestdr')
+			if(text=='ecowest drive')
 			// if(text.includes("ecowestdr-"))
 			{
 				let chatbotResponse = "";
@@ -2623,6 +3421,266 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis25;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='san pedro street')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/sanpedro')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis26;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='davao city-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/davaocity-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis27;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='f torres street-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/ftorresst-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis28;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='a bonifacio street-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/abonifaciost-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis29;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='f torres street')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/ftorresst')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis30;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='a bonifacio street')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/abonifaciost')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis31;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='m roxas')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/mroxas')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis32;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='m roxas-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/mroxas-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis33;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='jplaurel before gmall-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaureloutgmall-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis34;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='jplaurel before gmall')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaureloutgmall')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis35;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='cm recto')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/cmrecto')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis36;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='c bangoy-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/cbangoy-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis37;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='c bangoy')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/cbangoy')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis38;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
