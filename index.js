@@ -2653,8 +2653,9 @@ app.post('/webhook/', function(req, res) {
 				
 				sendText(sender, "whats up ? how may I help you")
 			}
-
-			if(text.includes("equirino")){
+			if(text=='equirino')
+			// if(text.includes("equirino"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2672,7 +2673,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("jplaurel")){
+			if(text=='jplaurel')
+			// if(text.includes("jplaurel"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2690,7 +2693,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("jplaurel-")){
+			if(text=='jplaurel-')
+			// if(text.includes("jplaurel-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2708,7 +2713,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("mcarthur")){
+			if(text=='mcarthur')
+			// if(text.includes("mcarthur"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2726,7 +2733,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("mcarthur-")){
+			if(text=='mcarthur-')
+			// if(text.includes("mcarthur-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2744,8 +2753,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-
-			if(text.includes("ecowestdr")){
+			if(text=='ecowestdr')
+			// if(text.includes("ecowestdr"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2763,7 +2773,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ecowestdr-")){
+			if(text=='ecowestdr-')
+			// if(text.includes("ecowestdr-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2781,7 +2793,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ecoland")){
+			if(text=='ecoland')
+			// if(text.includes("ecoland"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2799,8 +2813,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-
-			if(text.includes("matina aplaya")){
+			if(text=='matina aplaya')
+			// if(text.includes("matina aplaya"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2818,7 +2833,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("matina aplaya-")){
+			if(text=='matina aplaya-')
+			// if(text.includes("matina aplaya-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2836,7 +2853,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ecoland-")){
+			if(text=='ecoland-')
+			// if(text.includes("ecoland-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2854,7 +2873,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("tulip dr")){
+			if(text=='tulip drive')
+			// if(text.includes("tulip dr"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2872,8 +2893,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-
-			if(text.includes("tulip drive-")){
+			if(text=='tulip drive-')
+			// if(text.includes("tulip drive-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2891,7 +2913,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("sandawa")){
+			if(text=='sandawa')
+			// if(text.includes("sandawa"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2909,7 +2933,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("quimpo boulevard")){
+			if(text=='quimpo boulevard')
+			// if(text.includes("quimpo boulevard"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2927,7 +2953,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("sandawa-")){
+			if(text=='sandawa-')
+			// if(text.includes("sandawa-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -2944,7 +2972,10 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}if(text.includes("quimpo boulevard-")){
+			}
+			if(text=='quimpo boulevard-')
+			// if(text.includes("quimpo boulevard-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3002,7 +3033,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("cabaguio avenue")){
+			if(text=='cabaguio avenue')
+			// if(text.includes("cabaguio avenue"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3020,7 +3053,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ml quezon boulevard")){
+			if(text=='ml quezon boulevard')
+			// if(text.includes("ml quezon boulevard"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3038,7 +3073,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ml quezon boulevard-")){
+			if(text=='ml quezon boulevard-')
+			// if(text.includes("ml quezon boulevard-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3056,7 +3093,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("cabaguio avenue-")){
+			if(text=='caaguio avenue-')
+			// if(text.includes("cabaguio avenue-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3073,7 +3112,10 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}if(text.includes("dacudao avenue")){
+			}
+			if(text=='dacudao avenue')
+			// if(text.includes("dacudao avenue"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3091,7 +3133,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("dacudao avenue-")){
+			if(text=='dacudao avenue-')
+			// if(text.includes("dacudao avenue-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3109,7 +3153,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("pichon street")){
+			if(text=='pichon street')
+			// if(text.includes("pichon street"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -3127,7 +3173,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("pichon street-")){
+			if(text=='pichon street-')
+			// if(text.includes("pichon street-"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
