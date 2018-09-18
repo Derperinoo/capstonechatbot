@@ -117,54 +117,30 @@ app.get('/equirino-',function(_req, _res){
 
 	  	var aveq = ave/y;
 
-	  	
-	  	let analysis = "";
-	  	if(aveq <= 4){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 1){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 0){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 8){
-	  		analysis = "Sluggish flow of traffic";
-	  	}else if(aveq <= 7){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 6){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 5){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 4){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 8){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(aveq <= 9){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(aveq <= 10){
-	  		analysis = "Slow flow of traffic"
+	  	let analysiss = "";
+	  	if(aveq == 0 || aveq < 4){
+	  		analysiss = "Free flow of traffic";
+	  	}else if(aveq == 4 || aveq < 8){
+	  		analysiss = "Sluggish flow of traffic";
+	  	}else if(aveq == 8 || aveq < 10){
+	  		analysiss = "Slow flow of traffic";
+	  	}else if(aveq == 10){
+	  		analysiss = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis = "traffi8c kaayo di makaya"
+	  		analysiss = "Cannot compute"
 	  	}
 
-
-
+	  	
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2,  inte3: inte3, jfe3: jfe3, 
-    		inte4: inte4, jfe4: jfe4,  inte5: inte5, jfe5: jfe5,  analysis: analysis }));
+    		inte4: inte4, jfe4: jfe4,  inte5: inte5, jfe5: jfe5,  analysiss: analysiss }));
 
 	  
 	});
 
 
 });
-app.get('/jplaurel',function(_req, _res){
+app.get('/jplaurel-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -194,58 +170,30 @@ app.get('/jplaurel',function(_req, _res){
 	  	var avejp = jf01 + jf02 + jf03 + jf04 + jf05 + jf06;
 	  	var avejp1 = avejp/x;
 
-	  	
 	  	let analysis1 = "";
-	  	if(avejp1 <= 4){
+	  	if(avejp1 == 0 || avejp1 < 4){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 3){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 2){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 3){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 2){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 1){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 0){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 8){
+	  	}else if(avejp1 == 4 || avejp1 < 8){
 	  		analysis1 = "Sluggish flow of traffic";
-	  	}else if(avejp1 <= 7){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 6){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 5){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 4){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 8){
-	  		analysis1 = "Slow flow of traffic"
-	  	}else if(avejp1 <= 9){
-	  		analysis1 = "Slow flow of traffic"
-	  	}else if(avejp1 <= 10){
-	  		analysis1 = "Slow flow of traffic"
+	  	}else if(avejp1 == 8 || avejp1 < 10){
+	  		analysis1 = "Slow flow of traffic";
+	  	}else if(avejp1 == 10){
+	  		analysis1 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis1 = "dili nako ma computer"
+	  		analysis1 = "Cannot compute"
 	  	}
-
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02: jf02,  int03: int03, jf03: jf03,  
-    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05,  analysis1: analysis1 }));
+    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05, int06: int06, jf06: jf06, analysis1: analysis1 }));
 	
-
-
-
-	  
 	});
 
 
 });
 
-app.get('/jplaurel-',function(_req, _res){
+app.get('/jplaurel',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -276,43 +224,19 @@ app.get('/jplaurel-',function(_req, _res){
 	  	var varj = jf01 + jf02 + jf03 + jf04 + jf05 + jf06 ;
 	  	var varjp = varj/x;
 
-	  	
 	  	let analysiss1 = "";
-	  	if(varjp <= 4){
+	  	if(varjp == 0 || varjp < 4){
 	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 3){
-	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 2){
-	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 3){
-	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 2){
-	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 1){
-	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 0){
-	  		analysiss1 = "Free flow of traffic";
-	  	}else if(varjp <= 8){
+	  	}else if(varjp == 4 || varjp < 8){
 	  		analysiss1 = "Sluggish flow of traffic";
-	  	}else if(varjp <= 7){
-	  		analysiss1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 6){
-	  		analysiss1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 5){
-	  		analysiss1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 4){
-	  		analysiss1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 8){
-	  		analysiss1 = "Slow flow of traffic"
-	  	}else if(varjp <= 9){
-	  		analysiss1 = "Slow flow of traffic"
-	  	}else if(varjp <= 10){
-	  		analysiss1 = "Slow flow of traffic"
+	  	}else if(varjp == 8 || varjp < 10){
+	  		analysiss1 = "Slow flow of traffic";
+	  	}else if(varjp == 10){
+	  		analysiss1 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysiss1 = "dili nako ma computer"
+	  		analysiss1 = "Cannot compute"
 	  	}
-
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,  analysiss1: analysiss1 }));
@@ -322,7 +246,7 @@ app.get('/jplaurel-',function(_req, _res){
 
 
 
-app.get('/mcarthur',function(_req, _res){
+app.get('/mcarthur-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -374,58 +298,32 @@ app.get('/mcarthur',function(_req, _res){
 
 	  	const x = 14
 	  
-	  	var avem = jfm + jf02 + jfm2 + jfm3 + jfm4 + jfm5 + jfm6 + jfm8
+	  	var avem = jfm + jf02 + jfm2 + jfm3 + jfm4 + jfm5 + jfm6 + jfm7+ jfm8
 	  	+ jfm9 + jfm10 + jfm11 + jfm12 + jfm13  ;
 
 	  	var avemc = avem/x;
 
-	  	
 	  	let analysis2 = "";
-	  	if(avemc <= 4){
+	  	if(avemc == 0 || avemc < 4){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 3){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 2){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 3){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 2){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 1){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 0){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 8){
+	  	}else if(avemc == 4 || avemc < 8){
 	  		analysis2 = "Sluggish flow of traffic";
-	  	}else if(avemc <= 7){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 6){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 5){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 4){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 8){
-	  		analysis2 = "Slow flow of traffic"
-	  	}else if(avemc <= 9){
-	  		analysis2 = "Slow flow of traffic"
-	  	}else if(avemc <= 10){
-	  		analysis2 = "Slow flow of traffic"
+	  	}else if(avemc == 8 || avemc < 10){
+	  		analysis2 = "Slow flow of traffic";
+	  	}else if(avemc == 10){
+	  		analysis2 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis2 = "dili nako ma computer"
+	  		analysis2 = "Cannot compute"
 	  	}
-
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ streetmm: streetmm,  intm1: intm1, jf02: jf02,  intm2: intm2, jfm2: jfm2,  intm3: intm3, 
+    	_res.send(JSON.stringify({ streetmm: streetmm,  intm: intm, jfm: jfm, intm1: intm1, jf02: jf02,  intm2: intm2, jfm2: jfm2,  intm3: intm3, 
     		jfm3: jfm3,  
     		intm4: intm4, jfm4: jfm4,  intm5: intm5, jfm5: jfm5,  intm6: intm6, jfm6: jfm6,  intm7: intm7, 
     		jfm7: jfm7,  intm8: intm8, jfm8: jfm8,  intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
     		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm12: jfm12,  intm13: intm13, jfm13: jfm13, analysis2: analysis2 }));
 	
-
-
 
 	  
 	});
@@ -433,7 +331,7 @@ app.get('/mcarthur',function(_req, _res){
 
 });
 
-app.get('/mcarthur-',function(_req, _res){
+app.get('/mcarthur',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -483,50 +381,26 @@ app.get('/mcarthur-',function(_req, _res){
 	  	const intmm13 = body.RWS[0].RW[5].FIS[0].FI[13].TMC.DE;
 	  	const jfmm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
 
-	  	const xm = 13
+	  	const xm = 14
 	  
-	  	var avemm = jfmm + jfm02 + jfmm2 + jfmm3 + jfmm4 + jfmm5 + jfmm6 + jfmm8
+	  	var avemm = jfmm + jfm02 + jfmm2 + jfmm3 + jfmm4 + jfmm5 + jfmm6 + jfmm7 + jfmm8
 	  	+ jfmm9 + jfmm10 + jfmm11 + jfmm12 + jfmm13  ;
 
 	  	var avemcm = avemm/xm;
 
-	  	
 	  	let analysis3 = "";
-	  	if(avemcm <= 4){
+	  	if(avemcm == 0 || avemcm < 4){
 	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 3){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 2){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 3){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 2){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 1){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 0){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 8){
+	  	}else if(avemcm == 4 || avemcm < 8){
 	  		analysis3 = "Sluggish flow of traffic";
-	  	}else if(avemcm <= 7){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 6){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 5){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 4){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 8){
-	  		analysis3 = "Slow flow of traffic"
-	  	}else if(avemcm <= 9){
-	  		analysis3 = "Slow flow of traffic"
-	  	}else if(avemcm <= 10){
-	  		analysis3 = "Slow flow of traffic"
+	  	}else if(avemcm == 8 || avemcm < 10){
+	  		analysis3 = "Slow flow of traffic";
+	  	}else if(avemcm == 10){
+	  		analysis3 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis3 = "dili nako ma computer"
+	  		analysis3 = "Cannot compute"
 	  	}
-
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ streetmmm: streetmmm,  intmm1: intmm1, jfm02: jfm02,  intmm2: intmm2, jfmm2: jfmm2,  intmm3: intmm3, 
