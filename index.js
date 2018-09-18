@@ -1552,8 +1552,6 @@ app.get('/quezonblvd-',function(_req, _res){
 	  		analysis17 = "Slow flow of traffic";
 	  	}else if(quezonnb == 10){
 	  		analysis17 = "Traffic stopped or Road closed"
-	  	}else{
-	  		analysis17 = "Cannot compute"
 	  	}
 
 
