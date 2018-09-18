@@ -2718,12 +2718,12 @@ app.get('/cpgarcia',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[53].DE;
-	  	const intc1 = body.RWS[0].RW[53].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[53].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[54].DE;
+	  	const intc1 = body.RWS[0].RW[54].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[54].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[53].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[53].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[54].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[54].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -2758,12 +2758,12 @@ app.get('/mquinonesrd',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[54].DE;
-	  	const intc1 = body.RWS[0].RW[54].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[54].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[55].DE;
+	  	const intc1 = body.RWS[0].RW[55].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[55].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[54].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[54].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[55].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[55].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -2798,12 +2798,12 @@ app.get('/mquinonesrd-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[55].DE;
-	  	const intc1 = body.RWS[0].RW[55].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[55].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[56].DE;
+	  	const intc1 = body.RWS[0].RW[56].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[56].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[55].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[55].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[56].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[56].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -2839,12 +2839,12 @@ app.get('/jrodriguezmaa-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[56].DE;
-	  	const intc1 = body.RWS[0].RW[56].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[56].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[57].DE;
+	  	const intc1 = body.RWS[0].RW[57].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[57].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[56].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[56].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[57].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[57].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -2879,12 +2879,12 @@ app.get('/jrodriguezmaa',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[57].DE;
-	  	const intc1 = body.RWS[0].RW[57].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[57].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[58].DE;
+	  	const intc1 = body.RWS[0].RW[58].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[58].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[57].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[57].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[58].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[58].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -2920,15 +2920,15 @@ app.get('/maaroad-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[58].DE;
-	  	const intc1 = body.RWS[0].RW[58].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[58].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[59].DE;
+	  	const intc1 = body.RWS[0].RW[59].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[59].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[58].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[58].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[59].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[59].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[58].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[58].FIS[0].FI[2].CF[0].JF;
+	  	const intc3 = body.RWS[0].RW[59].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[59].FIS[0].FI[2].CF[0].JF;
 
 	  	var p = 3
 	  
@@ -2963,15 +2963,15 @@ app.get('/maaroad',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[59].DE;
-	  	const intc1 = body.RWS[0].RW[59].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[59].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[60].DE;
+	  	const intc1 = body.RWS[0].RW[60].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[60].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[59].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[59].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[60].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[60].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[59].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[59].FIS[0].FI[2].CF[0].JF;
+	  	const intc3 = body.RWS[0].RW[60].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[60].FIS[0].FI[2].CF[0].JF;
 
 	  	var p = 3
 	  
@@ -3007,12 +3007,12 @@ app.get('/shrinehillsrd-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[60].DE;
-	  	const intc1 = body.RWS[0].RW[60].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[60].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[61].DE;
+	  	const intc1 = body.RWS[0].RW[61].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[61].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[60].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[60].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[61].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[61].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3047,12 +3047,12 @@ app.get('/shrinehillsrd',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[61].DE;
-	  	const intc1 = body.RWS[0].RW[61].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[61].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[62].DE;
+	  	const intc1 = body.RWS[0].RW[62].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[62].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[61].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[61].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[62].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[62].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3088,15 +3088,15 @@ app.get('/angliongto-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[62].DE;
-	  	const intc1 = body.RWS[0].RW[62].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[62].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[63].DE;
+	  	const intc1 = body.RWS[0].RW[63].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[63].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[62].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[62].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[63].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[63].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[62].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[62].FIS[0].FI[2].CF[0].JF;
+	  	const intc3 = body.RWS[0].RW[63].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[63].FIS[0].FI[2].CF[0].JF;
 
 	  	var p = 3
 	  
@@ -3132,12 +3132,12 @@ app.get('/buhangincabantianroad-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[63].DE;
-	  	const intc1 = body.RWS[0].RW[63].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[63].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[64].DE;
+	  	const intc1 = body.RWS[0].RW[64].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[64].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[63].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[63].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[64].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[64].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3173,12 +3173,12 @@ app.get('/saintanthonysubd-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[64].DE;
-	  	const intc1 = body.RWS[0].RW[64].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[64].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[65].DE;
+	  	const intc1 = body.RWS[0].RW[65].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[65].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[64].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[64].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[65].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[65].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3214,15 +3214,15 @@ app.get('/angliongto',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[65].DE;
-	  	const intc1 = body.RWS[0].RW[65].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[65].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[66].DE;
+	  	const intc1 = body.RWS[0].RW[66].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[66].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[65].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[65].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[66].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[66].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[65].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[65].FIS[0].FI[2].CF[0].JF;
+	  	const intc3 = body.RWS[0].RW[66].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[66].FIS[0].FI[2].CF[0].JF;
 
 	  	var p = 3
 	  
@@ -3258,12 +3258,12 @@ app.get('/buhangincabantianroad',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[66].DE;
-	  	const intc1 = body.RWS[0].RW[66].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[66].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[67].DE;
+	  	const intc1 = body.RWS[0].RW[67].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[67].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[66].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[66].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[67].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[67].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3299,12 +3299,12 @@ app.get('/saintanthonysubd',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[67].DE;
-	  	const intc1 = body.RWS[0].RW[67].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[67].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[68].DE;
+	  	const intc1 = body.RWS[0].RW[68].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[68].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[67].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[67].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[68].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[68].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3340,12 +3340,12 @@ app.get('/cabantianroad-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[68].DE;
-	  	const intc1 = body.RWS[0].RW[68].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[68].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[69].DE;
+	  	const intc1 = body.RWS[0].RW[69].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[69].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[68].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[68].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[69].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[69].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3381,12 +3381,12 @@ app.get('/cabantianroad',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[69].DE;
-	  	const intc1 = body.RWS[0].RW[69].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[69].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[70].DE;
+	  	const intc1 = body.RWS[0].RW[70].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[70].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[69].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[69].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[70].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[70].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3421,12 +3421,12 @@ app.get('/davaomaharlika-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[70].DE;
-	  	const intc1 = body.RWS[0].RW[70].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[70].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[71].DE;
+	  	const intc1 = body.RWS[0].RW[71].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[71].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[70].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[70].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[71].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[71].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3461,12 +3461,12 @@ app.get('/davaomaharlika',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[71].DE;
-	  	const intc1 = body.RWS[0].RW[71].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[71].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[72].DE;
+	  	const intc1 = body.RWS[0].RW[72].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[72].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[71].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[71].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[72].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[72].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3502,12 +3502,12 @@ app.get('/davaobukidnonroad-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[72].DE;
-	  	const intc1 = body.RWS[0].RW[72].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[72].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[73].DE;
+	  	const intc1 = body.RWS[0].RW[73].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[73].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[72].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[72].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[73].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[73].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
@@ -3542,12 +3542,12 @@ app.get('/davaobukidnonroad',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[73].DE;
-	  	const intc1 = body.RWS[0].RW[73].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[73].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[74].DE;
+	  	const intc1 = body.RWS[0].RW[74].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[74].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[73].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[73].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[74].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[74].FIS[0].FI[1].CF[0].JF;
 
 	  	var p = 2
 	  
