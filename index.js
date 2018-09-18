@@ -5876,7 +5876,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='rcastillo')
+			if(text=='r castillo')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -6096,7 +6096,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='shtine hills road-')
+			if(text=='shrine hills road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -6116,7 +6116,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='shtine hills road')
+			if(text=='shrine hills road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
