@@ -2962,8 +2962,9 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			
-			if(text.includes(=="quezon boulevard")){
+			if(text=='quezon boulevard')
+			// if(text.includes("quezon boulevard"))
+			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
