@@ -417,7 +417,7 @@ app.get('/mcarthur',function(_req, _res){
 
 });
 
-app.get('/ecowestdr',function(_req, _res){
+app.get('/ecowestdr-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -429,8 +429,6 @@ app.get('/ecowestdr',function(_req, _res){
 	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
 	  	
 
-	  	
-	  	
 
 	  	const streetec = body.RWS[0].RW[6].DE;
 	  	const inte1 = body.RWS[0].RW[6].FIS[0].FI[0].TMC.DE;
@@ -448,39 +446,18 @@ app.get('/ecowestdr',function(_req, _res){
 	  	var ecowest = eco/w;
 	  	
 	  	let analysis4 = "";
-	  	if(ecowest <= 4){
+	  	if(ecowest == 0 || ecowest < 4){
 	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 3){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 2){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 3){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 2){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 1){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 0){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 8){
+	  	}else if(ecowest == 4 || ecowest < 8){
 	  		analysis4 = "Sluggish flow of traffic";
-	  	}else if(ecowest <= 7){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 6){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 5){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 4){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 8){
-	  		analysis4 = "Slow flow of traffic"
-	  	}else if(ecowest <= 9){
-	  		analysis4 = "Slow flow of traffic"
-	  	}else if(ecowest <= 10){
-	  		analysis4 = "Slow flow of traffic"
+	  	}else if(ecowest == 8 || ecowest < 10){
+	  		analysis4 = "Slow flow of traffic";
+	  	}else if(ecowest == 10){
+	  		analysis4 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis4 = "traffi8c kaayo di makaya"
+	  		analysis4 = "Cannot compute"
 	  	}
+	  	
 
 
 
@@ -495,7 +472,7 @@ app.get('/ecowestdr',function(_req, _res){
 
 
 });
-app.get('/ecowestdr-',function(_req, _res){
+app.get('/ecowestdr',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -524,43 +501,20 @@ app.get('/ecowestdr-',function(_req, _res){
 	  	var ecoeco = jfee1 + jfee2 ;
 
 	  	var ecowestdr = ecoeco/z;
-	  	
+
 	  	let analysis5 = "";
-	  	if(ecowestdr <= 4){
+	  	if(ecowestdr == 0 || ecowestdr < 4){
 	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 3){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 2){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 3){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 2){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 1){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 0){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 8){
+	  	}else if(ecowestdr == 4 || ecowestdr < 8){
 	  		analysis5 = "Sluggish flow of traffic";
-	  	}else if(ecowestdr <= 7){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 6){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 5){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 4){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 8){
-	  		analysis5 = "Slow flow of traffic"
-	  	}else if(ecowestdr <= 9){
-	  		analysis5 = "Slow flow of traffic"
-	  	}else if(ecowestdr <= 10){
-	  		analysis5 = "Slow flow of traffic"
+	  	}else if(ecowestdr == 8 || ecowestdr < 10){
+	  		analysis5 = "Slow flow of traffic";
+	  	}else if(ecowestdr == 10){
+	  		analysis5 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis5 = "traffi8c kaayo di makaya"
+	  		analysis5 = "Cannot compute"
 	  	}
-
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streeteec, intee1: intee1, jfee1: jfee1,  intee2: intee2, jfee2: jfee2, analysis5: analysis5 }));
@@ -593,60 +547,37 @@ app.get('/ecoland',function(_req, _res){
 
 	  	var p = 3
 	  
-	  	var ecoland = jfc1 + jfc2 ;
+	  	var ecoland = jfc1 + jfc2 + jfc3;
 
 	  	var ecolands = ecoland/p;
 	  	
 	  	let analysis6 = "";
-	  	if(ecolands <= 4){
+	  	if(ecolands == 0 || ecolands < 4){
 	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 3){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 2){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 3){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 2){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 1){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 0){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 8){
+	  	}else if(ecolands == 4 || ecolands < 8){
 	  		analysis6 = "Sluggish flow of traffic";
-	  	}else if(ecolands <= 7){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 6){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 5){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 4){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 8){
-	  		analysis6 = "Slow flow of traffic"
-	  	}else if(ecolands <= 9){
-	  		analysis6 = "Slow flow of traffic"
-	  	}else if(ecolands <= 10){
-	  		analysis6 = "Slow flow of traffic"
+	  	}else if(ecolands == 8 || ecolands < 10){
+	  		analysis6 = "Slow flow of traffic";
+	  	}else if(ecolands == 10){
+	  		analysis6 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis6 = "traffi8c kaayo di makaya"
+	  		analysis6 = "Cannot compute"
 	  	}
+	  	
+	  	
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis6: analysis6 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis6: analysis6 }));
 	
-
-
-
 	  
 	});
 
 
 });
 
-app.get('/matinaaplaya',function(_req, _res){
+app.get('/matinaaplaya-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -673,40 +604,20 @@ app.get('/matinaaplaya',function(_req, _res){
 	  	var aplaya = matina/p;
 	  	
 	  	let analysis7 = "";
-	  	if(aplaya <= 4){
+
+	  	if(aplaya == 0 || aplaya < 4){
 	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 3){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 2){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 3){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 2){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 1){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 0){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 8){
+	  	}else if(aplaya == 4 || aplaya < 8){
 	  		analysis7 = "Sluggish flow of traffic";
-	  	}else if(aplaya <= 7){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 6){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 5){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 4){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 8){
-	  		analysis7 = "Slow flow of traffic"
-	  	}else if(aplaya <= 9){
-	  		analysis7 = "Slow flow of traffic"
-	  	}else if(aplaya <= 10){
-	  		analysis7 = "Slow flow of traffic"
+	  	}else if(aplaya == 8 || aplaya < 10){
+	  		analysis7 = "Slow flow of traffic";
+	  	}else if(aplaya == 10){
+	  		analysis7 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis7 = "traffi8c kaayo di makaya"
+	  		analysis7 = "Cannot compute"
 	  	}
 
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -721,7 +632,7 @@ app.get('/matinaaplaya',function(_req, _res){
 
 });
 
-app.get('/matinaaplaya-',function(_req, _res){
+app.get('/matinaaplaya',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -748,54 +659,30 @@ app.get('/matinaaplaya-',function(_req, _res){
 	  	var mataplaya = matinaap/p;
 	  	
 	  	let analysis8 = "";
-	  	if(mataplaya <= 4){
+	  	
+	  	if(mataplaya == 0 || mataplaya < 4){
 	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 3){
-	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 2){
-	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 3){
-	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 2){
-	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 1){
-	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 0){
-	  		analysis8 = "Free flow of traffic";
-	  	}else if(mataplaya <= 8){
+	  	}else if(mataplaya == 4 || mataplaya < 8){
 	  		analysis8 = "Sluggish flow of traffic";
-	  	}else if(mataplaya <= 7){
-	  		analysis8 = "Sluggish flow of traffic"
-	  	}else if(mataplaya <= 6){
-	  		analysis8 = "Sluggish flow of traffic"
-	  	}else if(mataplaya <= 5){
-	  		analysis8 = "Sluggish flow of traffic"
-	  	}else if(mataplaya <= 4){
-	  		analysis8 = "Sluggish flow of traffic"
-	  	}else if(mataplaya <= 8){
-	  		analysis8 = "Slow flow of traffic"
-	  	}else if(mataplaya <= 9){
-	  		analysis8 = "Slow flow of traffic"
-	  	}else if(mataplaya <= 10){
-	  		analysis8 = "Slow flow of traffic"
+	  	}else if(mataplaya == 8 || mataplaya < 10){
+	  		analysis8 = "Slow flow of traffic";
+	  	}else if(mataplaya == 10){
+	  		analysis8 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis8 = "traffi8c kaayo di makaya"
+	  		analysis8 = "Cannot compute"
 	  	}
-
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetm, intm1: intm1, jfm1: jfm1,  intm2: intm2, jfm2: jfm2, intm3: intm3, jfm3: jfm3, intm4:intm4, jfm4:jfm4, analysis8: analysis8 }));
 	
 
-
-
 	  
 	});
 
 
 });
-app.get('/ecoland-',function(_req, _res){
+app.get('/ecoland',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -819,40 +706,20 @@ app.get('/ecoland-',function(_req, _res){
 	  	var ecolandplus = ecoplus/p;
 	  	
 	  	let analysis9 = "";
-	  	if(ecolandplus <= 4){
+	  	
+	  	if(ecolandplus == 0 || ecolandplus < 4){
 	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 3){
-	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 2){
-	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 3){
-	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 2){
-	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 1){
-	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 0){
-	  		analysis9 = "Free flow of traffic";
-	  	}else if(ecolandplus <= 8){
+	  	}else if(ecolandplus == 4 || ecolandplus < 8){
 	  		analysis9 = "Sluggish flow of traffic";
-	  	}else if(ecolandplus <= 7){
-	  		analysis9 = "Sluggish flow of traffic"
-	  	}else if(ecolandplus <= 6){
-	  		analysis9 = "Sluggish flow of traffic"
-	  	}else if(ecolandplus <= 5){
-	  		analysis9 = "Sluggish flow of traffic"
-	  	}else if(ecolandplus <= 4){
-	  		analysis9 = "Sluggish flow of traffic"
-	  	}else if(ecolandplus <= 8){
-	  		analysis9 = "Slow flow of traffic"
-	  	}else if(ecolandplus <= 9){
-	  		analysis9 = "Slow flow of traffic"
-	  	}else if(ecolandplus <= 10){
-	  		analysis9 = "Slow flow of traffic"
+	  	}else if(ecolandplus == 8 || ecolandplus < 10){
+	  		analysis9 = "Slow flow of traffic";
+	  	}else if(ecolandplus == 10){
+	  		analysis9 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis9 = "traffi8c kaayo di makaya"
+	  		analysis9 = "Cannot compute"
 	  	}
 
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -866,7 +733,8 @@ app.get('/ecoland-',function(_req, _res){
 
 
 });
-app.get('/tulipdr',function(_req, _res){
+
+app.get('/tulipdr-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -890,41 +758,20 @@ app.get('/tulipdr',function(_req, _res){
 	  	var tulipdrive = tulip/p;
 	  	
 	  	let analysis10 = "";
-	  	if(tulipdrive <= 4){
+	  	
+	  	if(tulipdrive == 0 || tulipdrive < 4){
 	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 3){
-	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 2){
-	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 3){
-	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 2){
-	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 1){
-	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 0){
-	  		analysis10 = "Free flow of traffic";
-	  	}else if(tulipdrive <= 8){
+	  	}else if(tulipdrive == 4 || tulipdrive < 8){
 	  		analysis10 = "Sluggish flow of traffic";
-	  	}else if(tulipdrive <= 7){
-	  		analysis10 = "Sluggish flow of traffic"
-	  	}else if(tulipdrive <= 6){
-	  		analysis10 = "Sluggish flow of traffic"
-	  	}else if(tulipdrive <= 5){
-	  		analysis10 = "Sluggish flow of traffic"
-	  	}else if(tulipdrive <= 4){
-	  		analysis10 = "Sluggish flow of traffic"
-	  	}else if(tulipdrive <= 8){
-	  		analysis10 = "Slow flow of traffic"
-	  	}else if(tulipdrive <= 9){
-	  		analysis10 = "Slow flow of traffic"
-	  	}else if(tulipdrive <= 10){
-	  		analysis10 = "Slow flow of traffic"
+	  	}else if(tulipdrive == 8 || tulipdrive < 10){
+	  		analysis10 = "Slow flow of traffic";
+	  	}else if(tulipdrive == 10){
+	  		analysis10 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis10 = "traffi8c kaayo di makaya"
+	  		analysis10 = "Cannot compute"
 	  	}
 
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis10: analysis10 }));
@@ -937,7 +784,7 @@ app.get('/tulipdr',function(_req, _res){
 
 
 });
-app.get('/tulipdr-',function(_req, _res){
+app.get('/tulipdr',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -961,40 +808,20 @@ app.get('/tulipdr-',function(_req, _res){
 	  	var tulippdrive = tulipp/p;
 	  	
 	  	let analysis11 = "";
-	  	if(tulippdrive <= 4){
+	  	
+	  	if(tulippdrive == 0 || tulippdrive < 4){
 	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 3){
-	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 2){
-	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 3){
-	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 2){
-	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 1){
-	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 0){
-	  		analysis11 = "Free flow of traffic";
-	  	}else if(tulippdrive <= 8){
+	  	}else if(tulippdrive == 4 || tulippdrive < 8){
 	  		analysis11 = "Sluggish flow of traffic";
-	  	}else if(tulippdrive <= 7){
-	  		analysis11 = "Sluggish flow of traffic"
-	  	}else if(tulippdrive <= 6){
-	  		analysis11 = "Sluggish flow of traffic"
-	  	}else if(tulippdrive <= 5){
-	  		analysis11 = "Sluggish flow of traffic"
-	  	}else if(tulippdrive <= 4){
-	  		analysis11 = "Sluggish flow of traffic"
-	  	}else if(tulippdrive <= 8){
-	  		analysis11 = "Slow flow of traffic"
-	  	}else if(tulippdrive <= 9){
-	  		analysis11 = "Slow flow of traffic"
-	  	}else if(tulippdrive <= 10){
-	  		analysis11 = "Slow flow of traffic"
+	  	}else if(tulippdrive == 8 || tulippdrive < 10){
+	  		analysis11 = "Slow flow of traffic";
+	  	}else if(tulippdrive == 10){
+	  		analysis11 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis11 = "traffi8c kaayo di makaya"
+	  		analysis11 = "Cannot compute"
 	  	}
 
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1008,7 +835,7 @@ app.get('/tulipdr-',function(_req, _res){
 
 
 });
-app.get('/sandawa',function(_req, _res){
+app.get('/sandawa-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1028,40 +855,20 @@ app.get('/sandawa',function(_req, _res){
 	  	var sandawaas = sandawaa/p;
 	  	
 	  	let analysis12 = "";
-	  	if(sandawaas <= 4){
+	  	
+	  	if(sandawaas == 0 || sandawaas < 4){
 	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 3){
-	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 2){
-	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 3){
-	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 2){
-	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 1){
-	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 0){
-	  		analysis12 = "Free flow of traffic";
-	  	}else if(sandawaas <= 8){
+	  	}else if(sandawaas == 4 || sandawaas < 8){
 	  		analysis12 = "Sluggish flow of traffic";
-	  	}else if(sandawaas <= 7){
-	  		analysis12 = "Sluggish flow of traffic"
-	  	}else if(sandawaas <= 6){
-	  		analysis12 = "Sluggish flow of traffic"
-	  	}else if(sandawaas <= 5){
-	  		analysis12 = "Sluggish flow of traffic"
-	  	}else if(sandawaas <= 4){
-	  		analysis12 = "Sluggish flow of traffic"
-	  	}else if(sandawaas <= 8){
-	  		analysis12 = "Slow flow of traffic"
-	  	}else if(sandawaas <= 9){
-	  		analysis12 = "Slow flow of traffic"
-	  	}else if(sandawaas <= 10){
-	  		analysis12 = "Slow flow of traffic"
+	  	}else if(sandawaas == 8 || sandawaas < 10){
+	  		analysis12 = "Slow flow of traffic";
+	  	}else if(sandawaas == 10){
+	  		analysis12 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis12 = "traffi8c kaayo di makaya"
+	  		analysis12 = "Cannot compute"
 	  	}
 
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1075,7 +882,7 @@ app.get('/sandawa',function(_req, _res){
 
 
 });
-app.get('/quimpoblvd',function(_req, _res){
+app.get('/quimpoblvd-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1101,40 +908,20 @@ app.get('/quimpoblvd',function(_req, _res){
 	  	var quimpoo = quimpo/p;
 	  	
 	  	let analysis13 = "";
-	  	if(quimpoo <= 4){
+	  	
+	  	if(quimpoo == 0 || quimpoo < 4){
 	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 3){
-	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 2){
-	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 3){
-	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 2){
-	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 1){
-	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 0){
-	  		analysis13 = "Free flow of traffic";
-	  	}else if(quimpoo <= 8){
+	  	}else if(quimpoo == 4 || quimpoo < 8){
 	  		analysis13 = "Sluggish flow of traffic";
-	  	}else if(quimpoo <= 7){
-	  		analysis13 = "Sluggish flow of traffic"
-	  	}else if(quimpoo <= 6){
-	  		analysis13 = "Sluggish flow of traffic"
-	  	}else if(quimpoo <= 5){
-	  		analysis13 = "Sluggish flow of traffic"
-	  	}else if(quimpoo <= 4){
-	  		analysis13 = "Sluggish flow of traffic"
-	  	}else if(quimpoo <= 8){
-	  		analysis13 = "Slow flow of traffic"
-	  	}else if(quimpoo <= 9){
-	  		analysis13 = "Slow flow of traffic"
-	  	}else if(quimpoo <= 10){
-	  		analysis13 = "Slow flow of traffic"
+	  	}else if(quimpoo == 8 || quimpoo < 10){
+	  		analysis13 = "Slow flow of traffic";
+	  	}else if(quimpoo == 10){
+	  		analysis13 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis13 = "traffi8c kaayo di makaya"
+	  		analysis13 = "Cannot compute"
 	  	}
 
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1148,7 +935,7 @@ app.get('/quimpoblvd',function(_req, _res){
 
 
 });
-app.get('/sandawa-',function(_req, _res){
+app.get('/sandawa',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1168,41 +955,20 @@ app.get('/sandawa-',function(_req, _res){
 	  	var sandawaaas = sandawaaa/p;
 	  	
 	  	let analysis14 = "";
-	  	if(sandawaaas <= 4){
+	  	
+	  	if(sandawaaas == 0 || sandawaaas < 4){
 	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 3){
-	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 2){
-	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 3){
-	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 2){
-	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 1){
-	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 0){
-	  		analysis14 = "Free flow of traffic";
-	  	}else if(sandawaaas <= 8){
+	  	}else if(sandawaaas == 4 || sandawaaas < 8){
 	  		analysis14 = "Sluggish flow of traffic";
-	  	}else if(sandawaaas <= 7){
-	  		analysis14 = "Sluggish flow of traffic"
-	  	}else if(sandawaaas <= 6){
-	  		analysis14 = "Sluggish flow of traffic"
-	  	}else if(sandawaaas <= 5){
-	  		analysis14 = "Sluggish flow of traffic"
-	  	}else if(sandawaaas <= 4){
-	  		analysis14 = "Sluggish flow of traffic"
-	  	}else if(sandawaaas <= 8){
-	  		analysis14 = "Slow flow of traffic"
-	  	}else if(sandawaaas <= 9){
-	  		analysis14 = "Slow flow of traffic"
-	  	}else if(sandawaaas <= 10){
-	  		analysis14 = "Slow flow of traffic"
+	  	}else if(sandawaaas == 8 || sandawaaas < 10){
+	  		analysis14 = "Slow flow of traffic";
+	  	}else if(sandawaaas == 10){
+	  		analysis14 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis14 = "traffi8c kaayo di makaya"
+	  		analysis14 = "Cannot compute"
 	  	}
 
-
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis14: analysis14 }));
@@ -1215,7 +981,7 @@ app.get('/sandawa-',function(_req, _res){
 
 
 });
-app.get('/quimpoblvd-',function(_req, _res){
+app.get('/quimpoblvd',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1239,42 +1005,22 @@ app.get('/quimpoblvd-',function(_req, _res){
 	  	var quimpoo = jfc1 + jfc2 + jfc3 + jfc4 ;
 
 	  	var quimpooo = quimpoo/p;
-	  	
+
 	  	let analysis15 = "";
-	  	if(quimpooo <= 4){
+	  	
+	  	if(quimpooo == 0 || quimpooo < 4){
 	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 3){
-	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 2){
-	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 3){
-	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 2){
-	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 1){
-	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 0){
-	  		analysis15 = "Free flow of traffic";
-	  	}else if(quimpooo <= 8){
+	  	}else if(quimpooo == 4 || quimpooo < 8){
 	  		analysis15 = "Sluggish flow of traffic";
-	  	}else if(quimpooo <= 7){
-	  		analysis15 = "Sluggish flow of traffic"
-	  	}else if(quimpooo <= 6){
-	  		analysis15 = "Sluggish flow of traffic"
-	  	}else if(quimpooo <= 5){
-	  		analysis15 = "Sluggish flow of traffic"
-	  	}else if(quimpooo <= 4){
-	  		analysis15 = "Sluggish flow of traffic"
-	  	}else if(quimpooo <= 8){
-	  		analysis15 = "Slow flow of traffic"
-	  	}else if(quimpooo <= 9){
-	  		analysis15 = "Slow flow of traffic"
-	  	}else if(quimpooo <= 10){
-	  		analysis15 = "Slow flow of traffic"
+	  	}else if(quimpooo == 8 || quimpooo < 10){
+	  		analysis15 = "Slow flow of traffic";
+	  	}else if(quimpooo == 10){
+	  		analysis15 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis15 = "traffi8c kaayo di makaya"
+	  		analysis15 = "Cannot compute"
 	  	}
 
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis15: analysis15 }));
@@ -1287,7 +1033,7 @@ app.get('/quimpoblvd-',function(_req, _res){
 
 
 });
-app.get('/quezonblvd',function(_req, _res){
+app.get('/quezonblvd-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1316,40 +1062,20 @@ app.get('/quezonblvd',function(_req, _res){
 	  	var quezonb = quezon/p;
 	  	
 	  	let analysis16 = "";
-	  	if(quezonb <= 4){
+	  	
+	  	if(quezonb == 0 || quezonb < 4){
 	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 3){
-	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 2){
-	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 3){
-	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 2){
-	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 1){
-	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 0){
-	  		analysis16 = "Free flow of traffic";
-	  	}else if(quezonb <= 8){
+	  	}else if(quezonb == 4 || quezonb < 8){
 	  		analysis16 = "Sluggish flow of traffic";
-	  	}else if(qquezonb <= 7){
-	  		analysis16 = "Sluggish flow of traffic"
-	  	}else if(quezonb <= 6){
-	  		analysis16 = "Sluggish flow of traffic"
-	  	}else if(quezonb <= 5){
-	  		analysis16 = "Sluggish flow of traffic"
-	  	}else if(quezonb <= 4){
-	  		analysis16 = "Sluggish flow of traffic"
-	  	}else if(quezonb <= 8){
-	  		analysis16 = "Slow flow of traffic"
-	  	}else if(quezonb <= 9){
-	  		analysis16 = "Slow flow of traffic"
-	  	}else if(quezonb <= 10){
-	  		analysis16 = "Slow flow of traffic"
+	  	}else if(quezonb == 8 || quezonb < 10){
+	  		analysis16 = "Slow flow of traffic";
+	  	}else if(quezonb == 10){
+	  		analysis16 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis16 = "traffi8c kaayo di makaya"
+	  		analysis16 = "Cannot compute"
 	  	}
 
+	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5:jfc5, analysis16: analysis16 }));
@@ -1362,7 +1088,7 @@ app.get('/quezonblvd',function(_req, _res){
 
 
 });
-app.get('/quezonblvd-',function(_req, _res){
+app.get('/quezonblvd',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1391,6 +1117,7 @@ app.get('/quezonblvd-',function(_req, _res){
 	  	var quezonnb = quezonn/p;
 	  	
 	  	let analysis17 = "";
+	  	
 	  	if(quezonnb == 0 || quezonnb < 4){
 	  		analysis17 = "Free flow of traffic";
 	  	}else if(quezonnb == 4 || quezonnb < 8){
@@ -1415,7 +1142,7 @@ app.get('/quezonblvd-',function(_req, _res){
 
 
 });
-app.get('/cabaguioave',function(_req, _res){
+app.get('/cabaguioave-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1435,41 +1162,20 @@ app.get('/cabaguioave',function(_req, _res){
 	  	var cabaguioa = cabaguio/p;
 	  	
 	  	let analysis18 = "";
-	  	if(cabaguioa <= 4){
+	  	
+	  	if(cabaguioa == 0 || cabaguioa < 4){
 	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 3){
-	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 2){
-	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 3){
-	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 2){
-	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 1){
-	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 0){
-	  		analysis18 = "Free flow of traffic";
-	  	}else if(cabaguioa <= 8){
+	  	}else if(cabaguioa == 4 || cabaguioa < 8){
 	  		analysis18 = "Sluggish flow of traffic";
-	  	}else if(cabaguioa <= 7){
-	  		analysis18 = "Sluggish flow of traffic"
-	  	}else if(cabaguioa <= 6){
-	  		analysis18 = "Sluggish flow of traffic"
-	  	}else if(cabaguioa <= 5){
-	  		analysis18 = "Sluggish flow of traffic"
-	  	}else if(cabaguioa <= 4){
-	  		analysis18 = "Sluggish flow of traffic"
-	  	}else if(cabaguioa <= 8){
-	  		analysis18 = "Slow flow of traffic"
-	  	}else if(cabaguioa <= 9){
-	  		analysis18 = "Slow flow of traffic"
-	  	}else if(cabaguioa <= 10){
-	  		analysis18 = "Slow flow of traffic"
+	  	}else if(cabaguioa == 8 || cabaguioa < 10){
+	  		analysis18 = "Slow flow of traffic";
+	  	}else if(cabaguioa == 10){
+	  		analysis18 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis18 = "traffi8c kaayo di makaya"
+	  		analysis18 = "Cannot compute"
 	  	}
 
-
+	  	
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis18: analysis18 }));
 	
@@ -1481,7 +1187,7 @@ app.get('/cabaguioave',function(_req, _res){
 
 
 });
-app.get('/mlquezonblvd',function(_req, _res){
+app.get('/mlquezonblvd-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1513,39 +1219,20 @@ app.get('/mlquezonblvd',function(_req, _res){
 	  	var mlquezonb = mlquezon/p;
 	  	
 	  	let analysis19 = "";
-	  	if(mlquezonb <= 4){
+	  	
+	  	if(mlquezonb == 0 || mlquezonb < 4){
 	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 3){
-	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 2){
-	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 3){
-	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 2){
-	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 1){
-	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 0){
-	  		analysis19 = "Free flow of traffic";
-	  	}else if(mlquezonb <= 8){
+	  	}else if(mlquezonb == 4 || mlquezonb < 8){
 	  		analysis19 = "Sluggish flow of traffic";
-	  	}else if(mlquezonb <= 7){
-	  		analysis19 = "Sluggish flow of traffic"
-	  	}else if(mlquezonb <= 6){
-	  		analysis19 = "Sluggish flow of traffic"
-	  	}else if(mlquezonb <= 5){
-	  		analysis19 = "Sluggish flow of traffic"
-	  	}else if(mlquezonb <= 4){
-	  		analysis19 = "Sluggish flow of traffic"
-	  	}else if(mlquezonb <= 8){
-	  		analysis19 = "Slow flow of traffic"
-	  	}else if(mlquezonb <= 9){
-	  		analysis19 = "Slow flow of traffic"
-	  	}else if(mlquezonb <= 10){
-	  		analysis19 = "Slow flow of traffic"
+	  	}else if(mlquezonb == 8 || mlquezonb < 10){
+	  		analysis19 = "Slow flow of traffic";
+	  	}else if(mlquezonb == 10){
+	  		analysis19 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis19 = "traffi8c kaayo di makaya"
+	  		analysis19 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1559,7 +1246,7 @@ app.get('/mlquezonblvd',function(_req, _res){
 
 
 });
-app.get('/mlquezonblvd-',function(_req, _res){
+app.get('/mlquezonblvd',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1591,39 +1278,20 @@ app.get('/mlquezonblvd-',function(_req, _res){
 	  	var mlquezonnb = mlquezonn/p;
 	  	
 	  	let analysis20 = "";
-	  	if(mlquezonnb <= 4){
+	  	
+	  	if(mlquezonnb == 0 || mlquezonnb < 4){
 	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 3){
-	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 2){
-	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 3){
-	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 2){
-	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 1){
-	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 0){
-	  		analysis20 = "Free flow of traffic";
-	  	}else if(mlquezonnb <= 8){
+	  	}else if(mlquezonnb == 4 || mlquezonnb < 8){
 	  		analysis20 = "Sluggish flow of traffic";
-	  	}else if(mlquezonnb <= 7){
-	  		analysis20 = "Sluggish flow of traffic"
-	  	}else if(mlquezonnb <= 6){
-	  		analysis20 = "Sluggish flow of traffic"
-	  	}else if(mlquezonnb <= 5){
-	  		analysis20 = "Sluggish flow of traffic"
-	  	}else if(mlquezonnb <= 4){
-	  		analysis20 = "Sluggish flow of traffic"
-	  	}else if(mlquezonnb <= 8){
-	  		analysis20 = "Slow flow of traffic"
-	  	}else if(mlquezonnb <= 9){
-	  		analysis20 = "Slow flow of traffic"
-	  	}else if(mlquezonnb <= 10){
-	  		analysis20 = "Slow flow of traffic"
+	  	}else if(mlquezonnb == 8 || mlquezonnb < 10){
+	  		analysis20 = "Slow flow of traffic";
+	  	}else if(mlquezonnb == 10){
+	  		analysis20 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis20 = "traffi8c kaayo di makaya"
+	  		analysis20 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1637,7 +1305,7 @@ app.get('/mlquezonblvd-',function(_req, _res){
 
 
 });
-app.get('/cabaguioave-',function(_req, _res){
+app.get('/cabaguioave',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1657,39 +1325,20 @@ app.get('/cabaguioave-',function(_req, _res){
 	  	var cabaguiooa = cabaguioo/p;
 	  	
 	  	let analysis21 = "";
-	  	if(cabaguiooa <= 4){
+	  	
+	  	if(cabaguiooa == 0 || cabaguiooa < 4){
 	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 3){
-	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 2){
-	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 3){
-	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 2){
-	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 1){
-	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 0){
-	  		analysis21 = "Free flow of traffic";
-	  	}else if(cabaguiooa <= 8){
+	  	}else if(cabaguiooa == 4 || cabaguiooa < 8){
 	  		analysis21 = "Sluggish flow of traffic";
-	  	}else if(cabaguiooa <= 7){
-	  		analysis21 = "Sluggish flow of traffic"
-	  	}else if(cabaguiooa <= 6){
-	  		analysis21 = "Sluggish flow of traffic"
-	  	}else if(cabaguiooa <= 5){
-	  		analysis21 = "Sluggish flow of traffic"
-	  	}else if(cabaguiooa <= 4){
-	  		analysis21 = "Sluggish flow of traffic"
-	  	}else if(cabaguiooa <= 8){
-	  		analysis21 = "Slow flow of traffic"
-	  	}else if(cabaguiooa <= 9){
-	  		analysis21 = "Slow flow of traffic"
-	  	}else if(cabaguiooa <= 10){
-	  		analysis21 = "Slow flow of traffic"
+	  	}else if(cabaguiooa == 8 || cabaguiooa < 10){
+	  		analysis21 = "Slow flow of traffic";
+	  	}else if(cabaguiooa == 10){
+	  		analysis21 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis21 = "traffi8c kaayo di makaya"
+	  		analysis21 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1703,7 +1352,7 @@ app.get('/cabaguioave-',function(_req, _res){
 
 
 });
-app.get('/dacudaoave',function(_req, _res){
+app.get('/dacudaoave-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1723,39 +1372,20 @@ app.get('/dacudaoave',function(_req, _res){
 	  	var dacudaoa = dacudao/p;
 	  	
 	  	let analysis22 = "";
-	  	if(dacudaoa <= 4){
+	  	
+	  	if(dacudaoa == 0 || dacudaoa < 4){
 	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 3){
-	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 2){
-	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 3){
-	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 2){
-	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 1){
-	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 0){
-	  		analysis22 = "Free flow of traffic";
-	  	}else if(dacudaoa <= 8){
+	  	}else if(dacudaoa == 4 || dacudaoa < 8){
 	  		analysis22 = "Sluggish flow of traffic";
-	  	}else if(dacudaoa <= 7){
-	  		analysis22 = "Sluggish flow of traffic"
-	  	}else if(dacudaoa <= 6){
-	  		analysis22 = "Sluggish flow of traffic"
-	  	}else if(dacudaoa <= 5){
-	  		analysis22 = "Sluggish flow of traffic"
-	  	}else if(dacudaoa <= 4){
-	  		analysis22 = "Sluggish flow of traffic"
-	  	}else if(dacudaoa <= 8){
-	  		analysis22 = "Slow flow of traffic"
-	  	}else if(dacudaoa <= 9){
-	  		analysis22 = "Slow flow of traffic"
-	  	}else if(dacudaoa <= 10){
-	  		analysis22 = "Slow flow of traffic"
+	  	}else if(dacudaoa == 8 || dacudaoa < 10){
+	  		analysis22 = "Slow flow of traffic";
+	  	}else if(dacudaoa == 10){
+	  		analysis22 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis22 = "traffi8c kaayo di makaya"
+	  		analysis22 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1769,7 +1399,7 @@ app.get('/dacudaoave',function(_req, _res){
 
 
 });
-app.get('/dacudaoave-',function(_req, _res){
+app.get('/dacudaoave',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -1789,39 +1419,20 @@ app.get('/dacudaoave-',function(_req, _res){
 	  	var dacudaooa = dacudaoo/p;
 	  	
 	  	let analysis23 = "";
-	  	if(dacudaooa <= 4){
+	  	
+	  	if(dacudaooa == 0 || dacudaooa < 4){
 	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 3){
-	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 2){
-	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 3){
-	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 2){
-	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 1){
-	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 0){
-	  		analysis23 = "Free flow of traffic";
-	  	}else if(dacudaooa <= 8){
+	  	}else if(dacudaooa == 4 || dacudaooa < 8){
 	  		analysis23 = "Sluggish flow of traffic";
-	  	}else if(dacudaooa <= 7){
-	  		analysis23 = "Sluggish flow of traffic"
-	  	}else if(dacudaooa <= 6){
-	  		analysis23 = "Sluggish flow of traffic"
-	  	}else if(dacudaooa <= 5){
-	  		analysis23 = "Sluggish flow of traffic"
-	  	}else if(dacudaooa <= 4){
-	  		analysis23 = "Sluggish flow of traffic"
-	  	}else if(dacudaooa <= 8){
-	  		analysis23 = "Slow flow of traffic"
-	  	}else if(dacudaooa <= 9){
-	  		analysis23 = "Slow flow of traffic"
-	  	}else if(dacudaooa <= 10){
-	  		analysis23 = "Slow flow of traffic"
+	  	}else if(dacudaooa == 8 || dacudaooa < 10){
+	  		analysis23 = "Slow flow of traffic";
+	  	}else if(dacudaooa == 10){
+	  		analysis23 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis23 = "traffi8c kaayo di makaya"
+	  		analysis23 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1852,39 +1463,20 @@ app.get('/pichonst',function(_req, _res){
 	  	var pichons = pichon/p;
 	  	
 	  	let analysis24 = "";
-	  	if(pichons <= 4){
+	  	
+	  	if(pichons == 0 || pichons < 4){
 	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 3){
-	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 2){
-	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 3){
-	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 2){
-	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 1){
-	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 0){
-	  		analysis24 = "Free flow of traffic";
-	  	}else if(pichons <= 8){
+	  	}else if(pichons == 4 || pichons < 8){
 	  		analysis24 = "Sluggish flow of traffic";
-	  	}else if(pichons <= 7){
-	  		analysis24 = "Sluggish flow of traffic"
-	  	}else if(pichons <= 6){
-	  		analysis24 = "Sluggish flow of traffic"
-	  	}else if(pichons <= 5){
-	  		analysis24 = "Sluggish flow of traffic"
-	  	}else if(pichons <= 4){
-	  		analysis24 = "Sluggish flow of traffic"
-	  	}else if(pichons <= 8){
-	  		analysis24 = "Slow flow of traffic"
-	  	}else if(pichons <= 9){
-	  		analysis24 = "Slow flow of traffic"
-	  	}else if(pichons <= 10){
-	  		analysis24 = "Slow flow of traffic"
+	  	}else if(pichons == 8 || pichons < 10){
+	  		analysis24 = "Slow flow of traffic";
+	  	}else if(pichons == 10){
+	  		analysis24 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis24 = "traffi8c kaayo di makaya"
+	  		analysis24 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -1927,39 +1519,20 @@ app.get('/pichonst-',function(_req, _res){
 	  	var pichonns = pichonn/p;
 	  	
 	  	let analysis25 = "";
-	  	if(pichonns <= 4){
+	  	
+	  	if(pichonns == 0 || pichonns < 4){
 	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 3){
-	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 2){
-	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 3){
-	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 2){
-	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 1){
-	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 0){
-	  		analysis25 = "Free flow of traffic";
-	  	}else if(pichonns <= 8){
+	  	}else if(pichonns == 4 || pichonns < 8){
 	  		analysis25 = "Sluggish flow of traffic";
-	  	}else if(pichonns <= 7){
-	  		analysis25 = "Sluggish flow of traffic"
-	  	}else if(pichonns <= 6){
-	  		analysis25 = "Sluggish flow of traffic"
-	  	}else if(pichonns <= 5){
-	  		analysis25 = "Sluggish flow of traffic"
-	  	}else if(pichonns <= 4){
-	  		analysis25 = "Sluggish flow of traffic"
-	  	}else if(pichonns <= 8){
-	  		analysis25 = "Slow flow of traffic"
-	  	}else if(pichonns <= 9){
-	  		analysis25 = "Slow flow of traffic"
-	  	}else if(pichonns <= 10){
-	  		analysis25 = "Slow flow of traffic"
+	  	}else if(pichonns == 8 || pichonns < 10){
+	  		analysis25 = "Slow flow of traffic";
+	  	}else if(pichonns == 10){
+	  		analysis25 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis25 = "traffi8c kaayo di makaya"
+	  		analysis25 = "Cannot compute"
 	  	}
+
+	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -2507,6 +2080,26 @@ app.post('/webhook/', function(req, res) {
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get('https://glacial-bastion-40512.herokuapp.com/equirino')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='equirino-')
+			// if(text.includes("equirino"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/equirino-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis;
