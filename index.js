@@ -304,45 +304,45 @@ app.get('/jplaurel-',function(_req, _res){
 	  	var varjp = varj/x;
 
 	  	
-	  	let analysis1 = "";
+	  	let analysiss1 = "";
 	  	if(varjp <= 4){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 3){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 2){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 3){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 2){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 1){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 0){
-	  		analysis1 = "Free flow of traffic";
+	  		analysiss1 = "Free flow of traffic";
 	  	}else if(varjp <= 8){
-	  		analysis1 = "Sluggish flow of traffic";
+	  		analysiss1 = "Sluggish flow of traffic";
 	  	}else if(varjp <= 7){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysiss1 = "Sluggish flow of traffic"
 	  	}else if(varjp <= 6){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysiss1 = "Sluggish flow of traffic"
 	  	}else if(varjp <= 5){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysiss1 = "Sluggish flow of traffic"
 	  	}else if(varjp <= 4){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysiss1 = "Sluggish flow of traffic"
 	  	}else if(varjp <= 8){
-	  		analysis1 = "Slow flow of traffic"
+	  		analysiss1 = "Slow flow of traffic"
 	  	}else if(varjp <= 9){
-	  		analysis1 = "Slow flow of traffic"
+	  		analysiss1 = "Slow flow of traffic"
 	  	}else if(varjp <= 10){
-	  		analysis1 = "Slow flow of traffic"
+	  		analysiss1 = "Slow flow of traffic"
 	  	}else{
-	  		analysis1 = "dili nako ma computer"
+	  		analysiss1 = "dili nako ma computer"
 	  	}
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,  analysis1: analysis1 }));
+    	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,  analysiss1: analysiss1 }));
 	});
 
 	});
@@ -632,7 +632,7 @@ app.get('/ecowestdr',function(_req, _res){
 	  	}else if(ecowest <= 10){
 	  		analysis4 = "Slow flow of traffic"
 	  	}else{
-	  		analysis = "traffi8c kaayo di makaya"
+	  		analysis4 = "traffi8c kaayo di makaya"
 	  	}
 
 
@@ -2712,6 +2712,24 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text.includes("jplaurel-")){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaurel-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysiss1;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
 			if(text.includes("mcarthur")){
 				let chatbotResponse = "";
 				
@@ -2829,7 +2847,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis8;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2847,7 +2865,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/ecoland-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis;
+				    chatbotResponse = response.data.analysis9;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2865,7 +2883,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis6;
+				    chatbotResponse = response.data.analysis10;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2884,7 +2902,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis10;
+				    chatbotResponse = response.data.analysis11;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2902,7 +2920,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis11;
+				    chatbotResponse = response.data.analysis12;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2920,7 +2938,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis12;
+				    chatbotResponse = response.data.analysis13;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2938,7 +2956,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis13;
+				    chatbotResponse = response.data.analysis14;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2955,7 +2973,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis14;
+				    chatbotResponse = response.data.analysis15;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2973,7 +2991,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis15;
+				    chatbotResponse = response.data.analysis16;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -2991,7 +3009,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis16;
+				    chatbotResponse = response.data.analysis17;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -3009,7 +3027,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis17;
+				    chatbotResponse = response.data.analysis18;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
