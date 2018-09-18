@@ -2113,13 +2113,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='jplaurel')
+			if(text=='jplaurel-')
 			// if(text.includes("jplaurel"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaurel')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaurel-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis1;
@@ -2133,13 +2133,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='jplaurel-')
+			if(text=='jplaurel')
 			// if(text.includes("jplaurel-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaurel-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/jplaurel')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysiss1;
@@ -2153,13 +2153,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='mcarthur')
+			if(text=='mcarthur-')
 			// if(text.includes("mcarthur"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/mcarthur')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/mcarthur-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis2;
@@ -2173,13 +2173,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='mcarthur-')
+			if(text=='mcarthur')
 			// if(text.includes("mcarthur-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/mcarthur-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/mcarthur')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis3;
@@ -2193,13 +2193,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ecowestdr')
+			if(text=='ecowestdr-')
 			// if(text.includes("ecowestdr"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/ecowestdr')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/ecowestdr-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis4;
@@ -2213,13 +2213,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ecowestdr-')
+			if(text=='ecowestdr')
 			// if(text.includes("ecowestdr-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/ecowestdr-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/ecowestdr')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis5;
@@ -2253,13 +2253,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='matina aplaya')
+			if(text=='matina aplaya-')
 			// if(text.includes("matina aplaya"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis7;
@@ -2273,13 +2273,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='matina aplaya-')
+			if(text=='matina aplaya')
 			// if(text.includes("matina aplaya-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/matinaaplaya')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis8;
@@ -2293,13 +2293,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ecoland-')
+			if(text=='ecoland')
 			// if(text.includes("ecoland-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/ecoland-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/ecoland')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis9;
@@ -2313,13 +2313,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='tulip drive')
+			if(text=='tulip drive-')
 			// if(text.includes("tulip dr"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis10;
@@ -2333,13 +2333,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='tulip drive-')
+			if(text=='tulip drive')
 			// if(text.includes("tulip drive-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis11;
@@ -2353,13 +2353,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='sandawa')
+			if(text=='sandawa-')
 			// if(text.includes("sandawa"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis12;
@@ -2373,13 +2373,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='quimpo boulevard')
+			if(text=='quimpo boulevard-')
 			// if(text.includes("quimpo boulevard"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis13;
@@ -2393,13 +2393,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='sandawa-')
+			if(text=='sandawa')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/sandawa')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis14;
@@ -2413,13 +2413,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='quimpo boulevard-')
+			if(text=='quimpo boulevard')
 			// if(text.includes("quimpo boulevard-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/quimpoblvd')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis15;
@@ -2433,13 +2433,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='quezon boulevard')
+			if(text=='quezon boulevard-')
 			// if(text.includes("quezon boulevard"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis16;
@@ -2453,13 +2453,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='quezon boulevard-')
+			if(text=='quezon boulevard')
 			// if(text.includes("quezon boulevard-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/quezonblvd')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis17;
@@ -2473,13 +2473,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='cabaguio avenue')
+			if(text=='cabaguio avenue-')
 			// if(text.includes("cabaguio avenue"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis18;
@@ -2493,13 +2493,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ml quezon boulevard')
+			if(text=='ml quezon boulevard-')
 			// if(text.includes("ml quezon boulevard"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/mlquezonblvd')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/mlquezonblvd-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis19;
@@ -2513,13 +2513,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='ml quezon boulevard-')
+			if(text=='ml quezon boulevard')
 			// if(text.includes("ml quezon boulevard-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/mlquezonblvd-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/mlquezonblvd')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis20;
@@ -2533,13 +2533,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='caaguio avenue-')
+			if(text=='cabaguio avenue')
 			// if(text.includes("cabaguio avenue-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/cabaguioave')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis21;
@@ -2553,13 +2553,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='dacudao avenue')
+			if(text=='dacudao avenue-')
 			// if(text.includes("dacudao avenue"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/dacudaoave')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/dacudaoave-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis22;
@@ -2573,13 +2573,13 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='dacudao avenue-')
+			if(text=='dacudao avenue')
 			// if(text.includes("dacudao avenue-"))
 			{
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/dacudaoave-')
+				axios.get('https://glacial-bastion-40512.herokuapp.com/dacudaoave')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis23;
