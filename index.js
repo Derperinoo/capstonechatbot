@@ -1926,7 +1926,7 @@ app.get('/jplaureloutgmall-',function(_req, _res){
 	
 	  	var p = 3
 	  
-	  	var jplau = jfc1 + jfc2 + jfc3;
+	  	var jplau = jfc1 + jfc2 ;
 
 	  	var jplaur = jplau/p;
 	  	
@@ -1966,7 +1966,7 @@ app.get('/jplaureloutgmall',function(_req, _res){
 	
 	  	var p = 3
 	  
-	  	var jplaure = jfc1 + jfc2 + jfc3;
+	  	var jplaure = jfc1 + jfc2 ;
 
 	  	var jplaurell = jplaure/p;
 	  	
