@@ -23,6 +23,9 @@ app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
 })
 
+app.get('/greeting', function(req, res) {
+	res.send("Hello mah friend!")
+})
 // const bot = new BootBot({
 //   accessToken: process.env.ACCESS_TOKEN,
 //   verifyToken: process.env.VERIFY_TOKEN,
@@ -3651,6 +3654,22 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/greeting')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
 
 app.get('/geo',function(req, res){
 	
@@ -4874,18 +4893,6 @@ app.get('/webhook/', function(req, res) {
 app.post('/webhook/', function(req, res) {
 	let messaging_events = req.body.entry[0].messaging
 
-	const greeting = "Good day good sir!";
-		.then(function (response) {
-				    //console.log(response);
-				    chatbotResponse = response.data.greeting;
-				    sendText(sender, chatbotResponse)
-				  })
-				  .catch(function (error) {
-				    //console.log(error);
-				    chatbotResponse = "not ok";
-				    sendText(sender, chatbotResponse)
-				  });
-
 	for (let i = 0; i < messaging_events.length; i++) {
 		let event = messaging_events[i]
 		let sender = event.sender.id
@@ -4909,6 +4916,22 @@ app.post('/webhook/', function(req, res) {
 				
 			// 	sendText(sender, "whats up ? how may I help you")
 			// }
+			let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+			axios.get('https://glacial-bastion-40512.herokuapp.com/greeting')
+			  .then(function (response) {
+			    //console.log(response);
+			    chatbotResponse = response.data.greeting;
+			    sendText(sender, chatbotResponse)
+			  })
+			  .catch(function (error) {
+			    //console.log(error);
+			    chatbotResponse = "not ok";
+			    sendText(sender, chatbotResponse)
+			  });
+
+
 			if(text=='equirino')
 			// if(text.includes("equirino"))
 			{
