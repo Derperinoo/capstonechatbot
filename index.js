@@ -23,7 +23,12 @@ app.get('/', function(req, res) {
 })
 
 // HERE
-
+"greeting":[
+  {
+    "locale":"default",
+    "text":"Hello {{user_first_name}}!"
+  }
+]
 //source: https://www.twilio.com/blog/2017/08/http-requests-in-node-js.html
 
 app.get('/equirino',function(_req, _res){
