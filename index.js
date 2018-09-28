@@ -24,8 +24,7 @@ app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
 })
 
-// const greeting ="Greetings my friend!";
-// return greeting;
+
 
 // app.get('/greeting', function(req, res) {
 // 	res.send("Hello mah friend!")
@@ -4902,7 +4901,6 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-
 
 			// if(text.includes("good day chatbot")){
 			// 	sendText(sender, "whats up ? how may I help you")
