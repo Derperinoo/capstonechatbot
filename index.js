@@ -4873,29 +4873,42 @@ app.get('/webhook/', function(req, res) {
 
 app.post('/webhook/', function(req, res) {
 	let messaging_events = req.body.entry[0].messaging
+
+	const greeting = "Good day good sir!";
+		.then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.greeting;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
 	for (let i = 0; i < messaging_events.length; i++) {
 		let event = messaging_events[i]
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
 
-			if(text.includes("good day chatbot")){
-				sendText(sender, "whats up ? how may I help you")
-			}else if (text.includes("what is the traffic status in davao city")){
-				sendText(sender, "Well, Ok! are you a motorist or a commuter?")
-			}else if (text.includes("I am a commuter")){
-				sendText(sender, "Ok, so you are commuter. What route of jeep are you going to ride?")
-			}else if (text.includes("I am a motorist")){
-				sendText(sender, "Ok, so you are motorist. Where your location and where are you heading to? Example: PoceSt to Manila")
-			}else if (text.includes("NO")){
-				sendText(sender, "Ok! What now?")
-			}
+			// if(text.includes("good day chatbot")){
+			// 	sendText(sender, "whats up ? how may I help you")
+			// }else if (text.includes("what is the traffic status in davao city")){
+			// 	sendText(sender, "Well, Ok! are you a motorist or a commuter?")
+			// }else if (text.includes("I am a commuter")){
+			// 	sendText(sender, "Ok, so you are commuter. What route of jeep are you going to ride?")
+			// }else if (text.includes("I am a motorist")){
+			// 	sendText(sender, "Ok, so you are motorist. Where your location and where are you heading to? Example: PoceSt to Manila")
+			// }else if (text.includes("NO")){
+			// 	sendText(sender, "Ok! What now?")
+			// }
 
-			if(text.includes("route2")){
+			// if(text.includes("route2")){
 
 				
-				sendText(sender, "whats up ? how may I help you")
-			}
+			// 	sendText(sender, "whats up ? how may I help you")
+			// }
 			if(text=='equirino')
 			// if(text.includes("equirino"))
 			{
