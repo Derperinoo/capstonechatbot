@@ -24,8 +24,8 @@ app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
 })
 
-const greeting ="Greetings my friend!";
-return greeting;
+// const greeting ="Greetings my friend!";
+// return greeting;
 
 // app.get('/greeting', function(req, res) {
 // 	res.send("Hello mah friend!")
