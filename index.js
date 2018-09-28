@@ -17,15 +17,19 @@ app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
+
 // ROUTES
 
 app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
 })
 
-app.get('/greeting', function(req, res) {
-	res.send("Hello mah friend!")
-})
+const greeting ="Greetings my friend!";
+return greeting;
+
+// app.get('/greeting', function(req, res) {
+// 	res.send("Hello mah friend!")
+// })
 // const bot = new BootBot({
 //   accessToken: process.env.ACCESS_TOKEN,
 //   verifyToken: process.env.VERIFY_TOKEN,
@@ -3654,22 +3658,22 @@ app.get('/geo',function(req, res){
 	  });
 
 })
-app.get('/geo',function(req, res){
+// app.get('/geo',function(req, res){
 	
 
-	axios.get('https://glacial-bastion-40512.herokuapp.com/greeting')
-	  .then(function (response) {
-	    console.log(response.data);
-	    //chatbotResponse = response.jf1;
-	    //sendText(sender, chatbotResponse)
-	  })
-	  .catch(function (error) {
-	    console.log(error);
-	    //chatbotResponse = "not ok";
-	    //sendText(sender, chatbotResponse)
-	  });
+// 	axios.get('https://glacial-bastion-40512.herokuapp.com/greeting')
+// 	  .then(function (response) {
+// 	    console.log(response.data);
+// 	    //chatbotResponse = response.jf1;
+// 	    //sendText(sender, chatbotResponse)
+// 	  })
+// 	  .catch(function (error) {
+// 	    console.log(error);
+// 	    //chatbotResponse = "not ok";
+// 	    //sendText(sender, chatbotResponse)
+// 	  });
 
-})
+// })
 
 app.get('/geo',function(req, res){
 	
@@ -4899,6 +4903,7 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 
+
 			// if(text.includes("good day chatbot")){
 			// 	sendText(sender, "whats up ? how may I help you")
 			// }else if (text.includes("what is the traffic status in davao city")){
@@ -4916,20 +4921,20 @@ app.post('/webhook/', function(req, res) {
 				
 			// 	sendText(sender, "whats up ? how may I help you")
 			// }
-			let chatbotResponse = "";
+			// let chatbotResponse = "";
 				
-				//source : https://www.npmjs.com/package/axios
-			axios.get('https://glacial-bastion-40512.herokuapp.com/greeting')
-			  .then(function (response) {
-			    //console.log(response);
-			    chatbotResponse = response.data.greeting;
-			    sendText(sender, chatbotResponse)
-			  })
-			  .catch(function (error) {
-			    //console.log(error);
-			    chatbotResponse = "not ok";
-			    sendText(sender, chatbotResponse)
-			  });
+			// 	//source : https://www.npmjs.com/package/axios
+			// axios.get('https://glacial-bastion-40512.herokuapp.com/greeting')
+			//   .then(function (response) {
+			//     //console.log(response);
+			//     chatbotResponse = response.data.greeting;
+			//     sendText(sender, chatbotResponse)
+			//   })
+			//   .catch(function (error) {
+			//     //console.log(error);
+			//     chatbotResponse = "not ok";
+			//     sendText(sender, chatbotResponse)
+			//   });
 
 
 			if(text=='equirino')
