@@ -22,6 +22,25 @@ app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
 })
 
+const bot = new BootBot({
+  accessToken: process.env.ACCESS_TOKEN,
+  verifyToken: process.env.VERIFY_TOKEN,
+  appSecret: process.env.APP_SECRET
+})
+
+bot.hear(['hello', 'hey', 'sup'], (payload, chat)=>{
+  chat.getUserProfile().then((user) => {
+    chat.say(`Hey ${user.first_name}, How are you today?`)
+  })
+})
+
+bot.hear('help', (payload, chat) => {
+  chat.say('Here are the following commands for use.')
+  chat.say("'create': add a new reminder")
+  chat.say("'setup': add your bucket info such as slug and write key")
+  chat.say("'config': lists your current bucket config")
+})
+
 // HERE
 
 //source: https://www.twilio.com/blog/2017/08/http-requests-in-node-js.html
